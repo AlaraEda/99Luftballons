@@ -1,16 +1,24 @@
 /// <reference path="playscreen.ts"/>
 
 class Game {
-    
+
+
     private currentscreen:any
 
     constructor() {
         this.currentscreen = new StartScreen(this)
-        this.gameLoop()        
+        this.gameLoop()
+        
+
     }
     
+
+
     private gameLoop():void{
-        this.currentscreen.update()   
+        this.currentscreen.update()
+        
+        this.currentscreen.update()
+        
         requestAnimationFrame(() => this.gameLoop())
     }
 

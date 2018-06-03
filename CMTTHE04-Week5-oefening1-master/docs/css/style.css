@@ -9,7 +9,7 @@ body {
     font-size:22px;
     overflow:hidden;
     margin:0px; padding:0px;
-    background-image: url(../images/space.jpg);
+    background-image: url(../images/Violet.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -19,6 +19,32 @@ body * {
     display: block;
     box-sizing: border-box;
     background-repeat: no-repeat;
+}
+
+fish {
+    background-image: url(../images/fish.png);
+    width:130px; height: 110px;
+
+
+    /* kleur variatie met css */
+    -webkit-filter: hue-rotate(90deg);
+    filter: hue-rotate(90deg);
+    
+    /* animatie met css */
+    animation: fishanimation 4s ease-in-out infinite alternate;
+}
+
+.dead {
+    background-image: url(../images/bones.png);
+    /* this used to be "none" instead of fishanimation 4s ease-in-out infinite alternate */
+    animation: fishanimation 4s ease-in-out infinite alternate;
+}
+
+bubble {
+    background-image: url(../images/bubble.png);
+    width:55px; height: 55px;
+    left:50vw;
+    animation: bubbleup 6s linear infinite;
 }
 
 splash {
@@ -39,4 +65,24 @@ ball {
 paddle {
     background-image: url(../images/paddle.png);
     width:25px; height:100px;
+}
+
+@keyframes fishanimation {
+    0% {
+      transform: translateY(20px);
+    }
+    
+    100% {
+      transform: translateY(80px);
+    }
+  }
+  
+  @keyframes bubbleup {
+    0% {
+      transform: translateY(100vh);
+    }
+    
+    100% {
+      transform: translateY(0vh);
+    }
 }

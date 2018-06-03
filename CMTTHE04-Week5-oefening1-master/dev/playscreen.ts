@@ -1,45 +1,27 @@
 // <reference path="screen.ts"/>
-/// <reference path="ball.ts"/>
+// <reference path="ball.ts"/>
 
 class PlayScreen {
 
-    private balls: Ball[] = []
-    private paddle: Paddle
+    //private balls: Ball[] = []
+   // private paddle: Paddle
     private game: Game
 
+    i : number = 0
     constructor(g:Game) {
         this.game = g
-        this.paddle = new Paddle(20, 87, 83)
+        //this.paddle = new Paddle(20, 87, 83)
 
-        for (var i = 0; i < 5; i++) {
-            this.balls.push(new Ball())
-        }
+        //Stopt bij 100 visjes
+        for (this.i = 0; this.i < 100; this.i++) {
+            //CreateElements() functie word afgespeeld, per vis die gemaakt word 3 sec pauze. 
+            setTimeout(() => this.createElements(), this.i * 300)
+        
     }
 
-    public update(): void {
-        for (var b of this.balls) {
-
-            // ball hits paddle
-            if (this.checkCollision(b.getRectangle(), this.paddle.getRectangle())) {
-                b.hitPaddle()
-            }
-
-            // ball leaves the screen: gameover!
-            if (b.getRectangle().left < 0) {
-                this.game.showGameoverScreen()
-            }
-
-            b.update()
-        }
-
-        this.paddle.update()
-    }
-
-    private checkCollision(a: ClientRect, b: ClientRect) {
-        return (a.left <= b.right &&
-            b.left <= a.right &&
-            a.top <= b.bottom &&
-            b.top <= a.bottom)
+    createElements() {
+        let f = new Fish()  //Zorgt ervoor dat er een Fish van de Fish class word gehaald.
+        let b = new Bubble() //Zorgt ervoor dat er een bubble van de Bubble class word gehaald.            
     }
 
 }

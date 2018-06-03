@@ -27,34 +27,57 @@ var Ball = (function () {
     };
     return Ball;
 }());
+var Bubble = (function () {
+    function Bubble() {
+        console.log("ik ben een bubble");
+        var screenSize = window.innerWidth * 0.9;
+        var screenSize2 = window.innerHeight;
+        var randomNumber4 = Math.random() * screenSize;
+        var randomNumber5 = Math.random() * screenSize2;
+        this.bubbles = document.createElement("bubble");
+        document.body.appendChild(this.bubbles);
+        this.bubbles.style.left = randomNumber4 + "px";
+        this.bubbles.style.top = randomNumber5 + "px";
+    }
+    return Bubble;
+}());
+var Fish = (function () {
+    function Fish() {
+        var _this = this;
+        console.log("ik ben een fish");
+        var screenSize = window.innerWidth * 0.9;
+        var screenSize2 = window.innerHeight * 0.8;
+        var randomNumber = Math.random() * screenSize;
+        var randomNumber2 = Math.random() * screenSize2;
+        var randomNumber3 = Math.random() * 360;
+        this.vis = document.createElement("fish");
+        document.body.appendChild(this.vis);
+        this.vis.style.left = randomNumber + "px";
+        this.vis.style.top = randomNumber2 + "px";
+        this.vis.style.webkitFilter = "hue-rotate(" + randomNumber3 + "deg)";
+        this.vis.style.filter = "hue-rotate(" + randomNumber3 + "deg)";
+        this.vis.addEventListener("click", function () { return _this.dooieVis(); });
+    }
+    Fish.prototype.dooieVis = function () {
+        console.log("clicked");
+        this.vis.classList.add("dead");
+    };
+    return Fish;
+}());
 var PlayScreen = (function () {
     function PlayScreen(g) {
-        this.balls = [];
+        var _this = this;
+        this.i = 0;
         this.game = g;
-        this.paddle = new Paddle(20, 87, 83);
-        for (var i = 0; i < 5; i++) {
-            this.balls.push(new Ball());
+        for (this.i = 0; this.i < 100; this.i++) {
+            setTimeout(function () { return _this.createElements(); }, this.i * 300);
+        }
+        createElements();
+        {
+            var f = new Fish();
+            var b = new Bubble();
         }
     }
-    PlayScreen.prototype.update = function () {
-        for (var _i = 0, _a = this.balls; _i < _a.length; _i++) {
-            var b = _a[_i];
-            if (this.checkCollision(b.getRectangle(), this.paddle.getRectangle())) {
-                b.hitPaddle();
-            }
-            if (b.getRectangle().left < 0) {
-                this.game.showGameoverScreen();
-            }
-            b.update();
-        }
-        this.paddle.update();
-    };
-    PlayScreen.prototype.checkCollision = function (a, b) {
-        return (a.left <= b.right &&
-            b.left <= a.right &&
-            a.top <= b.bottom &&
-            b.top <= a.bottom);
-    };
     return PlayScreen;
 }());
 var Game = (function () {
@@ -64,6 +87,7 @@ var Game = (function () {
     }
     Game.prototype.gameLoop = function () {
         var _this = this;
+        this.currentscreen.update();
         this.currentscreen.update();
         requestAnimationFrame(function () { return _this.gameLoop(); });
     };
