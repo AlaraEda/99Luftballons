@@ -1,0 +1,66 @@
+body {
+    background-color: #70CF51;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow:hidden;
+    margin:0px; padding:0px;
+}
+
+body * {
+    position: absolute;
+    display: block;
+    margin:0px; padding:0px;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+}
+
+fish {
+    background-image: url(../images/fish.png);
+    width:130px; height: 110px;
+
+    transform-origin: 700 600;
+    
+    /* kleur variatie met css */
+    -webkit-filter: hue-rotate(90deg);
+    filter: hue-rotate(90deg);
+    
+    animation: fishanimation 4s ease-in-out infinite alternate;
+}
+
+balloon {
+    background-image: url(../images/balloon.png);
+    width:130px; height: 110px;
+    animation: bubbleup 3s linear infinite;
+}
+
+background {
+	background-image: url(../images/zee2.jpg);
+  width:100%; height: 100%;
+  background-size: cover;
+}
+
+/*class dead stond niet in het orignele bestand, heb ik handmatig zelf toegevoegd*/
+.dead {
+  background-image: url(../images/bones.png);
+  /* this used to be "none" instead of fishanimation 4s ease-in-out infinite alternate */
+  animation: fishanimation 4s ease-in-out infinite alternate;
+}
+
+@keyframes fishanimation {
+  0% {
+    transform: translateY(20px);
+  }
+  
+  100% {
+    transform: translateY(80px);
+  }
+}
+
+@keyframes bubbleup {
+  0% {
+    transform: translateY(100vh);
+  }
+  
+  100% {
+    transform: translateY(0vh);
+  }
+}

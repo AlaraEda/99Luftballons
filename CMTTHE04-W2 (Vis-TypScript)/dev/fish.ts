@@ -21,6 +21,7 @@ class Fish {
         //Vis creeeren, 'this' verwijst naar vis:HTMLElement
         this.vis = document.createElement("fish")                    //Creert vis in de DOM. de "fish" zit verwerkt in style.css
         document.body.appendChild(this.vis)                          //Zorgt dat de vis in de body van de DOM gestopt word
+
         //Posities/locaties vis
         this.vis.style.left = randomNumber + "px"
         this.vis.style.top = randomNumber2 + "px"
@@ -42,6 +43,7 @@ class Fish {
                                                             //.dead is het zelfde als "select all elements met de class = "dead"
                                                             //Dus moet je niet.dead maar dead typen tussen de haakjes.
                                                             //Plus je veranderd de vis eigenschap. Dus moet je fishes doen.
+
         }
  
 }
