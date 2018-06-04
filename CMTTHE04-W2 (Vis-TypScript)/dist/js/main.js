@@ -1,5 +1,5 @@
-var Bubble = (function () {
-    function Bubble() {
+var Balloon = (function () {
+    function Balloon() {
         var _this = this;
         console.log("ik ben een ballon");
         var screenSize = window.innerWidth * 0.9;
@@ -13,11 +13,11 @@ var Bubble = (function () {
         this.balloon.style.filter = "hue-rotate(" + randomNumber3 + "deg)";
         this.balloon.addEventListener("click", function () { return _this.KapotteBallon(); });
     }
-    Bubble.prototype.KapotteBallon = function () {
+    Balloon.prototype.KapotteBallon = function () {
         console.log("clicked");
         this.balloon.classList.add("dead");
     };
-    return Bubble;
+    return Balloon;
 }());
 var Fish = (function () {
     function Fish() {
@@ -50,25 +50,35 @@ var Game = (function () {
         for (this.i = 0; this.i < 100; this.i++) {
             setTimeout(function () { return _this.createElements(); }, this.i * 1000);
         }
-        var t = new Time();
     }
     Game.prototype.createElements = function () {
-        var b = new Bubble();
+        var b = new Balloon();
     };
     return Game;
 }());
 window.addEventListener("load", function () {
     new Game();
 });
-var Time = (function () {
-    function Time() {
-        var timer = (duration, minutes, seconds);
-        console.log("This is the Timer");
-        minutes = parseInt(timer / 60, 10);
+var timer = (function () {
+    function timer() {
+        var _this = this;
+        this.fiveMinutes = 60 * 5;
+        this.i = 0;
+        this.display = document.querySelector('#time');
+        startTimer(this.fiveMinutes, this.display);
+        setTimeout(function () { return _this.code(); }, this.i * 1000);
     }
-    Time.prototype.StartTime = function () {
-        this.minutes = parseInt(timer / 60, 10);
+    timer.prototype.code = function () {
+        var timer = duration, minutes, seconds;
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+        display.textContent = minutes + ":" + seconds;
+        if (--timer < 0) {
+            timer = duration;
+        }
     };
-    return Time;
+    return timer;
 }());
 //# sourceMappingURL=main.js.map

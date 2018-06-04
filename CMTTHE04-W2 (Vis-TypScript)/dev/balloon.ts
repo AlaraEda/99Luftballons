@@ -1,4 +1,4 @@
-class Bubble {
+class Balloon {
 
     balloon: HTMLElement
 
