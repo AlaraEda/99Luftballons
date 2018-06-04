@@ -29,6 +29,9 @@ fish {
 balloon {
     background-image: url(../images/balloon.png);
     width:130px; height: 110px;
+    -webkit-filter: hue-rotate(90deg);
+    filter: hue-rotate(90deg);
+
     animation: bubbleup 3s linear infinite;
 }
 
@@ -40,7 +43,7 @@ background {
 
 /*class dead stond niet in het orignele bestand, heb ik handmatig zelf toegevoegd*/
 .dead {
-  background-image: url(../images/bones.png);
+  background-image: url(../images/Geknapte-Balloon_0005_balloon-burst.png);
   /* this used to be "none" instead of fishanimation 4s ease-in-out infinite alternate */
   animation: fishanimation 4s ease-in-out infinite alternate;
 }

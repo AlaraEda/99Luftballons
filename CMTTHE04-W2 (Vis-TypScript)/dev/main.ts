@@ -5,15 +5,17 @@ class Game {
         console.log("Start game")
 
         //Stopt bij 100 visjes & bubbles
-        for (this.i = 0; this.i < 3; this.i++) {
+        for (this.i = 0; this.i < 100; this.i++) {
             //CreateElements() functie word afgespeeld, per vis die gemaakt word 3 sec pauze. 
-            setTimeout(() => this.createElements(), this.i * 300)
+            setTimeout(() => this.createElements(), this.i * 1000)
         }
+        let t = new Time()
     }
 
     createElements() {
             //let f = new Fish()  //Zorgt ervoor dat er een Fish van de Fish class word gehaald.
             let b = new Bubble() //Zorgt ervoor dat er een bubble van de Bubble class word gehaald.            
+    
     }
     
 }
