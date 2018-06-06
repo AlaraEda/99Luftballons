@@ -1,4 +1,4 @@
-class timer {
+class Timer {
     fiveMinutes = 60 * 5
     i : number = 0
     display = document.querySelector('#time')

@@ -1,9 +1,11 @@
 class Game {
     i : number = 0
+    timer : Timer
 
     constructor() {
         console.log("Start game")
 
+        this.timer = new Timer()
         //let t = new timer()
        
         //Stopt bij 100 visjes & bubbles
@@ -12,8 +14,7 @@ class Game {
             
             setTimeout(() => this.createElements(), this.i * 1000)
         }
-
-        
+                
     }
 
     createElements() {
