@@ -13,17 +13,10 @@ body * {
     background-repeat: no-repeat;
 }
 
-fish {
-    background-image: url(../images/fish.png);
-    width:130px; height: 110px;
-
-    transform-origin: 700 600;
-    
-    /* kleur variatie met css */
-    -webkit-filter: hue-rotate(90deg);
-    filter: hue-rotate(90deg);
-    
-    animation: fishanimation 4s ease-in-out infinite alternate;
+clock {
+  width: 130px; height: 110px;
+  color: white;
+  font-size: 2em;
 }
 
 balloon {
@@ -31,8 +24,6 @@ balloon {
     width:130px; height: 110px;
     -webkit-filter: hue-rotate(90deg);
     filter: hue-rotate(90deg);
-
-    animation: bubbleup 3s linear infinite;
 }
 
 background {
@@ -44,26 +35,5 @@ background {
 /*class dead stond niet in het orignele bestand, heb ik handmatig zelf toegevoegd*/
 .dead {
   background-image: url(../images/Geknapte-Balloon2_0005_balloon-burst.png);
-  /* this used to be "none" instead of fishanimation 4s ease-in-out infinite alternate */
-  animation: fishanimation 4s ease-in-out infinite alternate;
-}
 
-@keyframes fishanimation {
-  0% {
-    transform: translateY(20px);
-  }
-  
-  100% {
-    transform: translateY(80px);
-  }
-}
-
-@keyframes bubbleup {
-  0% {
-    transform: translateY(100vh);
-  }
-  
-  100% {
-    transform: translateY(0vh);
-  }
 }

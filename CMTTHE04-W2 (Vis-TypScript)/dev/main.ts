@@ -1,28 +1,22 @@
 class Game {
-    i : number = 0
     timer : Timer
+    balloons:Balloon[] = []
 
     constructor() {
-        console.log("Start game")
-
         this.timer = new Timer()
-        //let t = new timer()
-       
-        //Stopt bij 100 visjes & bubbles
-        for (this.i = 0; this.i < 100; this.i++) {
-            //CreateElements() functie word afgespeeld, per vis die gemaakt word 3 sec pauze. 
-            
-            setTimeout(() => this.createElements(), this.i * 1000)
+        for (let i = 0; i < 15; i++) {
+            this.balloons.push(new Balloon())
         }
-                
+        this.gameLoop()
     }
-
-    createElements() {
-            
-            //let f = new Fish()  //Zorgt ervoor dat er een Fish van de Fish class word gehaald.
-            let b = new Balloon() //Zorgt ervoor dat er een bubble van de Bubble class word gehaald.            
+    
+    private gameLoop(){
+        for(let b of this.balloons){
+            b.update()
+        }
+        this.timer.update()
+        requestAnimationFrame(()=>this.gameLoop())
     }
-
     
 }
 

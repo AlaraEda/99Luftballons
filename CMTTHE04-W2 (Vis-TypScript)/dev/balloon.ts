@@ -1,43 +1,34 @@
 class Balloon {
 
-    balloon: HTMLElement
-
-    //Constructor voert de code in het document uit.
+    private div : HTMLElement
+    
+    private x : number
+    private y: number
+    
+    private speedX: number
+    private speedY: number
+    
     constructor() {
-        console.log("ik ben een ballon")
-
-        //Random nummer voor de scherm grootte in breedte en hoogte
-        let screenSize = window.innerWidth * 0.9                        //Scherm breedte
-        //let screenSize2 = window.innerHeight                            //Scherm hoogte
-
-        //Gekopieerd van Javascript
-        let randomNumber4 = Math.random() * screenSize                  //Random getal in Scherm Breedte
-        //let randomNumber5 = Math.random() * screenSize2                 //Random getal in Scherm Hoogte
-        let randomNumber3 = Math.random() * 360
+        this.div = document.createElement("balloon")
+        document.body.appendChild(this.div)
         
-        //Bubbel creeeren
-        this.balloon = document.createElement("balloon")                 //Creert bubbel via DOM
-        document.body.appendChild(this.balloon)                         //Zorgt dat de bubbel in de body van de DOM bevind
-
-        //Posities/Locaties
-        this.balloon.style.left = randomNumber4 + "px"
-        this.balloon.style.top = 0 + "px"
-
-         //Kleuren van de vis
-         this.balloon.style.webkitFilter = "hue-rotate("+ randomNumber3+ "deg)"
-         this.balloon.style.filter = "hue-rotate(" + randomNumber3 + "deg)"   //Binnen  0 - 360
-
-        //Vissen zijn clickabel
-        this.balloon.addEventListener("click", ()=> this.KapotteBallon())
+        this.x = Math.random() * window.innerWidth
+        this.y = window.innerHeight + Math.random() * 700
+        this.speedX = 0
+        this.speedY = Math.random() * - 7  // te langzaam
+    
+        this.div.addEventListener("click", ()=> this.kapotteBallon())
     }
 
-            //dooie vis
-            KapotteBallon(){
-                console.log("clicked")
-                this.balloon.classList.add("dead")                  //Want in CSS staat de afbeelding van bot vis als .dead
-                                                                    //.dead is het zelfde als "select all elements met de class = "dead"
-                                                                    //Dus moet je niet.dead maar dead typen tussen de haakjes.
-                                                                    //Plus je veranderd de vis eigenschap. Dus moet je fishes doen.
+    update(){
         
-                }
+        this.x += this.speedX
+        this.y += this.speedY
+        this.div.style.transform = `translate(${this.x}px, ${this.y}px)` 
+    }
+
+    kapotteBallon(){
+        this.div.classList.add("dead")                  //Want in CSS staat de afbeelding van bot vis als .dead
+        this.speedY = 2
+    }
 }
