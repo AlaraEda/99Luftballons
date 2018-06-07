@@ -14,7 +14,6 @@ class Balloon {
     
     constructor() {
         
-
         //Balloon is gecreerd en in de body van Html gestopt.
         this.balloon = document.createElement("balloon")            
         document.body.appendChild(this.balloon)

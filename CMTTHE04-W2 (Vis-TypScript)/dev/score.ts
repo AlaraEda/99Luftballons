@@ -19,10 +19,6 @@ class Score {
 
     update(){
         console.log(this.score++)
-        this.scoreboard.innerHTML = "Score: " + Math.floor(this.score)
-       
+        this.scoreboard.innerHTML = "Score: " + this.score  
     }
-
-
-
 }
