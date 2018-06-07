@@ -25,6 +25,7 @@ class Game {
         this.timer.update()
 
         //Upate de Scorebord die staat in score.ts
+        //this.score.update()
         this.score.update()
 
         //Herhaal deze functie.

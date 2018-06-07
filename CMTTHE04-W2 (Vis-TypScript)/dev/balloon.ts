@@ -2,6 +2,8 @@ class Balloon {
 
     private balloon : HTMLElement                                           //Div
     
+    
+
     //Ballon positie
     private x : number                                                      //Positie X
     private y: number                                                       //Positie Y
@@ -11,6 +13,7 @@ class Balloon {
     private speedY: number                                                  //Snelheid Y-as
     
     constructor() {
+        
 
         //Balloon is gecreerd en in de body van Html gestopt.
         this.balloon = document.createElement("balloon")            
@@ -27,6 +30,7 @@ class Balloon {
     
         //Wanneer geklikt word op ballon --> knak.
         this.balloon.addEventListener("click", ()=> this.kapotteBallon())
+    
     }
 
     update(){
@@ -39,8 +43,7 @@ class Balloon {
 
     kapotteBallon(){
         this.balloon.classList.add("dead")                                  // Want in CSS staat de afbeelding van geknakte balloon als dood.
-        this.speedY = 2                                                     // Snelheid waarmee geknakte ballon valt.
-   
-        
+        this.speedY = 2                                                     // Snelheid waarmee geknakte ballon valt.               
+    
     }
 }

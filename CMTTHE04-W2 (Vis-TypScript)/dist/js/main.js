@@ -49,12 +49,12 @@ var Score = (function () {
     function Score() {
         this.score = 0;
         this.posX = 0;
-        this.div = document.createElement("score");
-        document.body.appendChild(this.div);
+        this.scoreboard = document.createElement("score");
+        document.body.appendChild(this.scoreboard);
     }
     Score.prototype.update = function () {
-        this.div.innerHTML = "Score: " + Math.floor(this.score);
-        console.log(this.score);
+        console.log(this.score++);
+        this.scoreboard.innerHTML = "Score: " + Math.floor(this.score);
     };
     return Score;
 }());
