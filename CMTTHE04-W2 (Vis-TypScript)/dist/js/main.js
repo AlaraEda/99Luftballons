@@ -45,16 +45,17 @@ window.addEventListener("load", function () {
 });
 var Timer = (function () {
     function Timer() {
-        this.fiveMinutes = 60 * 5;
-        this.i = 5000;
+        this.secondes = 300;
         this.div = document.createElement("clock");
         document.body.appendChild(this.div);
         this.div.innerHTML = "Tijd: 500";
+        if (this.secondes == 0) {
+            console.log("Stop");
+        }
     }
     Timer.prototype.update = function () {
-        console.log("update de tijd");
-        this.div.innerHTML = "Teller " + Math.floor(this.i / 10);
-        this.i--;
+        this.div.innerHTML = "Teller " + Math.floor(this.secondes / 10);
+        this.secondes--;
     };
     return Timer;
 }());
