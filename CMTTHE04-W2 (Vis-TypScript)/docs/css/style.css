@@ -14,11 +14,17 @@ body * {
 }
 
 clock {
-  width: 130px; height: 110px;
+  width: 400px; height: 110px;
   color: white;
-  font-size: 2em;
+  font-size: 4em;
+  /*text-align: center;*/
 }
 
+score {
+  width: 400px; height: 110px;
+  color: white;
+  font-size: 4em;
+}
 balloon {
     background-image: url(../images/balloon.png);
     width:130px; height: 110px;

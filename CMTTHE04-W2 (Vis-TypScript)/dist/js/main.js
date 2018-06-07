@@ -24,6 +24,7 @@ var Game = (function () {
     function Game() {
         this.balloons = [];
         this.timer = new Timer();
+        this.score = new Score();
         for (var i = 0; i < 15; i++) {
             this.balloons.push(new Balloon());
         }
@@ -36,6 +37,7 @@ var Game = (function () {
             b.update();
         }
         this.timer.update();
+        this.score.update();
         requestAnimationFrame(function () { return _this.gameLoop(); });
     };
     return Game;
@@ -43,19 +45,35 @@ var Game = (function () {
 window.addEventListener("load", function () {
     new Game();
 });
+var Score = (function () {
+    function Score() {
+        this.score = 0;
+        this.posX = 0;
+        this.div = document.createElement("score");
+        document.body.appendChild(this.div);
+    }
+    Score.prototype.update = function () {
+        this.div.innerHTML = "Score: " + Math.floor(this.score);
+        console.log(this.score);
+    };
+    return Score;
+}());
 var Timer = (function () {
     function Timer() {
-        this.secondes = 300;
+        this.secondes = 30000;
+        this.posX = 0;
+        this.posY = 0;
         this.div = document.createElement("clock");
         document.body.appendChild(this.div);
         this.div.innerHTML = "Tijd: 500";
-        if (this.secondes == 0) {
-            console.log("Stop");
-        }
+        this.posX = (innerWidth / 2) - 150;
+        this.div.style.transform = "translate(" + this.posX + "px, " + this.posY + "px)";
     }
     Timer.prototype.update = function () {
-        this.div.innerHTML = "Teller " + Math.floor(this.secondes / 10);
-        this.secondes--;
+        this.div.innerHTML = "Teller " + Math.floor(this.secondes / 100);
+        if (this.secondes > 0) {
+            this.secondes--;
+        }
     };
     return Timer;
 }());
