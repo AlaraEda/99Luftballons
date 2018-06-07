@@ -1,21 +1,21 @@
 var Balloon = (function () {
     function Balloon() {
         var _this = this;
-        this.div = document.createElement("balloon");
-        document.body.appendChild(this.div);
-        this.x = Math.random() * window.innerWidth;
-        this.y = window.innerHeight + Math.random() * 700;
+        this.balloon = document.createElement("balloon");
+        document.body.appendChild(this.balloon);
+        this.x = Math.random() * window.innerWidth - 40;
+        this.y = window.innerHeight + Math.random();
         this.speedX = 0;
         this.speedY = Math.random() * -7;
-        this.div.addEventListener("click", function () { return _this.kapotteBallon(); });
+        this.balloon.addEventListener("click", function () { return _this.kapotteBallon(); });
     }
     Balloon.prototype.update = function () {
         this.x += this.speedX;
         this.y += this.speedY;
-        this.div.style.transform = "translate(" + this.x + "px, " + this.y + "px)";
+        this.balloon.style.transform = "translate(" + this.x + "px, " + this.y + "px)";
     };
     Balloon.prototype.kapotteBallon = function () {
-        this.div.classList.add("dead");
+        this.balloon.classList.add("dead");
         this.speedY = 2;
     };
     return Balloon;
