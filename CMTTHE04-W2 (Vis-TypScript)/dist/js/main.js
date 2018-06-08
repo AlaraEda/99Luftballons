@@ -54,7 +54,7 @@ var Score = (function () {
     }
     Score.prototype.update = function () {
         console.log(this.score++);
-        this.scoreboard.innerHTML = "Score: " + Math.floor(this.score);
+        this.scoreboard.innerHTML = "Score: " + this.score;
     };
     return Score;
 }());
