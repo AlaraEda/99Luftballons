@@ -2,8 +2,6 @@ class Balloon {
 
     private balloon : HTMLElement                                           //Div
     
-    
-
     //Ballon positie
     private x : number                                                      //Positie X
     private y: number                                                       //Positie Y

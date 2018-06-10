@@ -7,10 +7,6 @@ var Screens = (function () {
         document.body.innerHTML = "";
         this.screen = new Playscreen(this);
     };
-    Screens.prototype.showEndScreen = function (score) {
-        document.body.innerHTML = "";
-        this.screen = new GameOverScreen(this, score);
-    };
     Screens.prototype.gameLoop = function () {
         var _this = this;
         this.screen.update();
