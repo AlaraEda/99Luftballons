@@ -1,3 +1,24 @@
+var Screens = (function () {
+    function Screens() {
+        this.screen = new StartScreen(this);
+        this.gameLoop();
+    }
+    Screens.prototype.showPlayScreen = function () {
+        document.body.innerHTML = "";
+        this.screen = new Playscreen(this);
+    };
+    Screens.prototype.showEndScreen = function (score) {
+        document.body.innerHTML = "";
+        this.screen = new GameOverScreen(this, score);
+    };
+    Screens.prototype.gameLoop = function () {
+        var _this = this;
+        this.screen.update();
+        requestAnimationFrame(function () { return _this.gameLoop(); });
+    };
+    return Screens;
+}());
+window.addEventListener("load", function () { return new Screens(); });
 var Balloon = (function () {
     function Balloon() {
         var _this = this;
@@ -20,9 +41,10 @@ var Balloon = (function () {
     };
     return Balloon;
 }());
-var Game = (function () {
-    function Game() {
+var Playscreen = (function () {
+    function Playscreen(g) {
         this.balloons = [];
+        this.screen = g;
         this.timer = new Timer();
         this.score = new Score();
         for (var i = 0; i < 15; i++) {
@@ -30,7 +52,7 @@ var Game = (function () {
         }
         this.gameLoop();
     }
-    Game.prototype.gameLoop = function () {
+    Playscreen.prototype.gameLoop = function () {
         var _this = this;
         for (var _i = 0, _a = this.balloons; _i < _a.length; _i++) {
             var b = _a[_i];
@@ -40,10 +62,10 @@ var Game = (function () {
         this.score.update();
         requestAnimationFrame(function () { return _this.gameLoop(); });
     };
-    return Game;
+    return Playscreen;
 }());
 window.addEventListener("load", function () {
-    new Game();
+    new Screens();
 });
 var Score = (function () {
     function Score() {
@@ -57,6 +79,22 @@ var Score = (function () {
         this.scoreboard.innerHTML = "Score: " + this.score;
     };
     return Score;
+}());
+var StartScreen = (function () {
+    function StartScreen(s) {
+        var _this = this;
+        this.screen = s;
+        this.div = document.createElement("start");
+        document.body.appendChild(this.div);
+        this.div.addEventListener("click", function () { return _this.startClicked(); });
+        this.div.innerHTML = "START THE GAME";
+    }
+    StartScreen.prototype.update = function () {
+    };
+    StartScreen.prototype.startClicked = function () {
+        this.screen.showPlayScreen();
+    };
+    return StartScreen;
 }());
 var Timer = (function () {
     function Timer() {

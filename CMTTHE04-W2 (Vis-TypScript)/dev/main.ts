@@ -1,9 +1,12 @@
-class Game {
+class Playscreen {
+
+    screen : Screens 
     timer : Timer
     score : Score
     balloons:Balloon[] = []
 
-    constructor() {
+    constructor(g:Screens) {
+        this.screen = g
         this.timer = new Timer()                //Maak Timer aan van Timer class.
 
         this.score = new Score()                //Maakt een nieuw Scoreboard aan.
@@ -34,6 +37,7 @@ class Game {
 }
 
 // Creates new Game instance when page is loaded.
+// Laat het startscherm als eerste zien;
 window.addEventListener("load", function () {
-    new Game()
+    new Screens()
 });
