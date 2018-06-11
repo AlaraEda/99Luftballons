@@ -5,6 +5,8 @@ var Screens = (function () {
     }
     Screens.prototype.showPlayScreen = function () {
         document.body.innerHTML = "";
+        var bg = document.createElement('background');
+        document.body.appendChild(bg);
         this.screen = new Playscreen(this);
     };
     Screens.prototype.gameLoop = function () {

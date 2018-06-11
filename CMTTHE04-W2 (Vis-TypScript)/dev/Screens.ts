@@ -16,6 +16,8 @@ class Screens {
         //Dit maakt de body van html leeg, zodat je alleen het achergrond ziet.
         document.body.innerHTML = ""
         
+        let bg = document.createElement('background');
+        document.body.appendChild(bg);
         
         //"This" is een instance. Doorgestuurd naar "main.ts"
          this.screen = new Playscreen(this)
