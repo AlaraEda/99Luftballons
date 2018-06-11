@@ -1,3 +1,5 @@
+
+//Alle schermen worden hierin opgeroepen.
 class Screens {
     screen: any
     

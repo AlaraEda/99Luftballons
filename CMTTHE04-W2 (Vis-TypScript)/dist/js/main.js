@@ -73,7 +73,6 @@ var Score = (function () {
         document.body.appendChild(this.scoreboard);
     }
     Score.prototype.update = function () {
-        console.log(this.score++);
         this.scoreboard.innerHTML = "Score: " + this.score;
     };
     return Score;

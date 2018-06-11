@@ -10,7 +10,8 @@ class Playscreen {
         this.timer = new Timer()                //Maak Timer aan van Timer class.
 
         this.score = new Score()                //Maakt een nieuw Scoreboard aan.
-        //Push nieuwe Balloon
+
+        //Push aantal Balloon
         for (let i = 0; i < 15; i++) {
             this.balloons.push(new Balloon())
         }
@@ -28,9 +29,8 @@ class Playscreen {
         this.timer.update()
 
         //Upate de Scorebord die staat in score.ts
-        //this.score.update()
         this.score.update()
-
+    
         //Herhaal deze functie.
         requestAnimationFrame(()=>this.gameLoop())
     }   
