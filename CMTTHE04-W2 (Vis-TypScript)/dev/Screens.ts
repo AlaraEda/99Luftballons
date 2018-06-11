@@ -26,14 +26,14 @@ class Screens {
     }
 
     // //Word afgespeeld wanneer playscreen.ts is uitgespeeld
-    // public showEndScreen(score:number){
-    //     //Leegt de screen
-    //     document.body.innerHTML = ""
+    public showEndScreen(score:number){
+        //Leegt de screen
+        document.body.innerHTML = ""
 
-    //     //Neemt "score" parameter in zich mee van playscreen.ts
-    //     //Gaat met deze functie naar gameover.ts
-    //     this.screen = new GameOverScreen(this, score)
-    // }
+        //Neemt "score" parameter in zich mee van playscreen.ts
+        //Gaat met deze functie naar gameover.ts
+        this.screen = new GameOverScreen(score)
+    }
 
     private gameLoop():void{
         //Update screen aanroepen

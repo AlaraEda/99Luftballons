@@ -39,6 +39,7 @@ class Balloon {
     }
 
     kapotteBallon(){
+        
         this.balloon.classList.add("dead")                                  // Want in CSS staat de afbeelding van geknakte balloon als dood.
         this.speedY = 2                                                     // Snelheid waarmee geknakte ballon valt.               
     

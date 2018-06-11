@@ -9,6 +9,10 @@ var Screens = (function () {
         document.body.appendChild(bg);
         this.screen = new Playscreen(this);
     };
+    Screens.prototype.showEndScreen = function (score) {
+        document.body.innerHTML = "";
+        this.screen = new GameOverScreen(score);
+    };
     Screens.prototype.gameLoop = function () {
         var _this = this;
         this.screen.update();
@@ -38,6 +42,27 @@ var Balloon = (function () {
         this.speedY = 2;
     };
     return Balloon;
+}());
+var GameOverScreen = (function () {
+    function GameOverScreen(s) {
+        var _this = this;
+        this.score = s;
+        var text = document.createElement("h1");
+        text.innerHTML = "Game Over<br><br>Restart";
+        text.classList.add("splash");
+        text.addEventListener("click", function () { return _this.Clicked(); });
+        document.body.appendChild(text);
+        var score = document.createElement("H3");
+        score.innerHTML = "Score: " + this.score;
+        score.classList.add("endScore");
+        document.body.appendChild(score);
+    }
+    GameOverScreen.prototype.update = function () {
+    };
+    GameOverScreen.prototype.Clicked = function () {
+        this.screens.showPlayScreen();
+    };
+    return GameOverScreen;
 }());
 var Playscreen = (function () {
     function Playscreen(g) {
@@ -71,6 +96,7 @@ var Score = (function () {
         this.posX = 0;
         this.scoreboard = document.createElement("score");
         document.body.appendChild(this.scoreboard);
+        this.score++;
     }
     Score.prototype.update = function () {
         this.scoreboard.innerHTML = "Score: " + this.score;
@@ -95,9 +121,10 @@ var StartScreen = (function () {
 }());
 var Timer = (function () {
     function Timer() {
-        this.secondes = 30000;
+        this.secondes = 300;
         this.posX = 0;
         this.posY = 0;
+        this.score = 5;
         this.div = document.createElement("clock");
         document.body.appendChild(this.div);
         this.div.innerHTML = "Tijd: 500";
@@ -108,6 +135,10 @@ var Timer = (function () {
         this.div.innerHTML = "Teller " + Math.floor(this.secondes / 100);
         if (this.secondes > 0) {
             this.secondes--;
+            console.log("Game Over");
+        }
+        else {
+            this.over = new GameOverScreen(this.score);
         }
     };
     return Timer;

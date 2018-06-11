@@ -15,6 +15,7 @@ class Score {
         document.body.appendChild(this.scoreboard)
 
         //this.div.innerHTML = "Score: "+ this.score
+        this.score++
     }
 
     update(){

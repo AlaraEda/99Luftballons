@@ -1,12 +1,16 @@
 class Timer {
     private div:HTMLElement
 
+    over: GameOverScreen
+
     //5 minuten
-    private secondes : number = 30000
+    private secondes : number = 300
 
     //Position
     private posX : number = 0
     private posY : number = 0
+
+    score: number = 5
 
     constructor() {
         //Creeer Clock in HTML
@@ -30,11 +34,11 @@ class Timer {
         if (this.secondes > 0){
             //Update dat er elke seconde word afgeteld.
             this.secondes--
+            console.log("Game Over")
         }
-
-    }
-    
- 
-
- 
+        else{
+            //Stuur door naar gameoverschreen.ts
+            this.over = new GameOverScreen(this.score)
+        }
+    } 
 }
