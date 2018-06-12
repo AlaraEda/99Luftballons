@@ -3,10 +3,11 @@ class GameOverScreen {
 
     private div: HTMLElement
     screen: Screens
-    score: number
+    
 
     constructor(s: Screens) {
         this.screen = s
+        
 
         //Lege div is gecreeerd.
         this.div = document.createElement("start")
@@ -31,6 +32,7 @@ class GameOverScreen {
     private Clicked() {   
         //Wanneer je klikt, word je doorgestuurd naar game.ts
         //Waarna je doorgestuurd word naar de showPlayScreen() functie.
+
         this.screen.showPlayScreen()
     }
 }

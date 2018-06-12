@@ -10,23 +10,19 @@ class Score {
 
 
     constructor(){
-    
         //Creeer scorebord in HTML
         this.scoreboard = document.createElement("score")
         document.body.appendChild(this.scoreboard)
-
     }
 
     update(){
         //console.log(this.score++)
         this.scoreboard.innerHTML = "Score: " + this.score  
-
-
     }
 
     public addScore(n:number){
         this.score += n
     }
-
+    
     //Maak een functie waarbij score weer 0 is.
 }
