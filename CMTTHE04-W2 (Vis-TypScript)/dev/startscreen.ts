@@ -4,7 +4,6 @@ class StartScreen {
     private div: HTMLElement
     private screen : Screens
 
-
     constructor(s:Screens) {
         console.log("IK BEN EEN START SCREEN");
         

@@ -15,7 +15,6 @@ class GameOverScreen {
         //let text = document.createElement("h1")
         this.div.innerHTML = "Game Over<br><br>Restart"
 
-
         this.div.addEventListener("click",()=> this.Clicked())
 
         //Score op eindscherm.

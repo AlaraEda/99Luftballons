@@ -23,6 +23,7 @@ window.addEventListener("load", function () {
 var Balloon = (function () {
     function Balloon() {
         var _this = this;
+        this.kapot = false;
         this.balloon = document.createElement("balloon");
         document.body.appendChild(this.balloon);
         var container = document.getElementsByTagName("game")[0];
@@ -39,6 +40,7 @@ var Balloon = (function () {
         this.balloon.style.transform = "translate(" + this.x + "px, " + this.y + "px)";
     };
     Balloon.prototype.kapotteBallon = function () {
+        this.kapot = true;
         this.balloon.classList.add("dead");
         this.speedY = 2;
     };
@@ -66,20 +68,24 @@ var GameOverScreen = (function () {
 }());
 var Playscreen = (function () {
     function Playscreen(s) {
-        this.balloons = [];
+        this.balloon = [];
         this.screen = s;
         this.timer = new Timer();
         this.score = new Score();
         for (var i = 0; i < 15; i++) {
-            this.balloons.push(new Balloon());
+            this.balloon.push(new Balloon());
         }
         this.gameLoop();
     }
     Playscreen.prototype.gameLoop = function () {
         var _this = this;
-        for (var _i = 0, _a = this.balloons; _i < _a.length; _i++) {
+        for (var _i = 0, _a = this.balloon; _i < _a.length; _i++) {
             var b = _a[_i];
             b.update();
+            if (b.kapot == true) {
+                this.score.addScore(1);
+                b.kapot = false;
+            }
         }
         this.timer.update();
         this.score.update();
@@ -98,10 +104,12 @@ var Score = (function () {
         this.posX = 0;
         this.scoreboard = document.createElement("score");
         document.body.appendChild(this.scoreboard);
-        this.score++;
     }
     Score.prototype.update = function () {
         this.scoreboard.innerHTML = "Score: " + this.score;
+    };
+    Score.prototype.addScore = function (n) {
+        this.score += n;
     };
     return Score;
 }());
