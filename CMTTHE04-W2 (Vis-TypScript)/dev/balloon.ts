@@ -2,7 +2,7 @@ class Balloon {
 
     private balloon : HTMLElement                                           //Div
     
-    
+    private score: Score
     //Ballon positie
     private x : number                                                      //Positie X
     private y: number                                                       //Positie Y
@@ -12,8 +12,9 @@ class Balloon {
     private speedY: number                                                  //Snelheid Y-as
     
     public kapot: boolean = false
-    constructor() {
-        
+
+    constructor(s: Score) {
+        this.score = s
         //Balloon is gecreerd en in de body van Html gestopt.
         this.balloon = document.createElement("balloon")            
         document.body.appendChild(this.balloon)
@@ -51,11 +52,14 @@ class Balloon {
         this.balloon.style.transform = `translate(${this.x}px, ${this.y}px)` 
     }
 
-    kapotteBallon(){ 
+    kapotteBallon(){
+        if (this.kapot == false){
+            this.score.addScore(10)
+        }
         this.kapot = true                                                   //Verwijzing naar --> playscreen.ts
         this.balloon.classList.add("dead")                                 // Want in CSS staat de afbeelding van geknakte balloon als dood.
         this.speedY = 2                                                    // Snelheid waarmee geknakte ballon valt.
-        this.balloon.removeEventListener('click', () => this.kapotteBallon)
+
 
         //Zorg ervoor dat je stukke ballonnen niet kan tellen.
     }

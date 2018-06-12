@@ -15,7 +15,7 @@ class Playscreen {
 
         //Push aantal Balloon
         for (let i = 0; i < 20; i++) {
-           this.balloon.push(new Balloon())
+           this.balloon.push(new Balloon(this.score))
         }
        this.gameLoop()
 
@@ -27,10 +27,10 @@ class Playscreen {
             //update staat in balloon.ts
             b.update()
 
-            if (b.kapot == true){
-                b.kapot = false
-                this.score.addScore(10)
-            }
+            // if (b.kapot == true){
+            //     b.kapot = false
+            //     this.score.addScore(10)
+            // }
 
      
         }

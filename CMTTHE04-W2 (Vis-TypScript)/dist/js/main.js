@@ -1,7 +1,8 @@
 var Balloon = (function () {
-    function Balloon() {
+    function Balloon(s) {
         var _this = this;
         this.kapot = false;
+        this.score = s;
         this.balloon = document.createElement("balloon");
         document.body.appendChild(this.balloon);
         var container = document.getElementsByTagName("game")[0];
@@ -20,11 +21,12 @@ var Balloon = (function () {
         this.balloon.style.transform = "translate(" + this.x + "px, " + this.y + "px)";
     };
     Balloon.prototype.kapotteBallon = function () {
-        var _this = this;
+        if (this.kapot == false) {
+            this.score.addScore(10);
+        }
         this.kapot = true;
         this.balloon.classList.add("dead");
         this.speedY = 2;
-        this.balloon.removeEventListener('click', function () { return _this.kapotteBallon; });
     };
     return Balloon;
 }());
@@ -52,7 +54,7 @@ var Playscreen = (function () {
         this.timer = new Timer();
         this.score = new Score();
         for (var i = 0; i < 20; i++) {
-            this.balloon.push(new Balloon());
+            this.balloon.push(new Balloon(this.score));
         }
         this.gameLoop();
     }
@@ -61,10 +63,6 @@ var Playscreen = (function () {
         for (var _i = 0, _a = this.balloon; _i < _a.length; _i++) {
             var b = _a[_i];
             b.update();
-            if (b.kapot == true) {
-                b.kapot = false;
-                this.score.addScore(10);
-            }
         }
         this.timer.update();
         this.score.update();
