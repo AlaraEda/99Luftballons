@@ -4,7 +4,7 @@ class Timer {
     over: GameOverScreen
 
     //5 minuten
-    private secondes : number = 3000
+    private secondes : number = 200
 
     //Position
     private posX : number = 0
@@ -39,7 +39,7 @@ class Timer {
     }
       
     update(){
-        this.clock.innerHTML = "Teller " + Math.floor(this.secondes/100)
+        this.clock.innerHTML = "Tijd " + Math.floor(this.secondes/50)
         
         //Teller stopt bij 0 
         if (this.secondes > 0){

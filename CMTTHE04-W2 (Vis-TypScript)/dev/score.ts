@@ -27,4 +27,6 @@ class Score {
     public addScore(n:number){
         this.score += n
     }
+
+    //Maak een functie waarbij score weer 0 is.
 }

@@ -5,25 +5,27 @@ class GameOverScreen {
     screen: Screens
     score: number
 
-    constructor(g: Screens) {
-        this.screen = g
+    constructor(s: Screens) {
+        this.screen = s
+
+        //Lege div is gecreeerd.
+        this.div = document.createElement("start")
+
+        //Een container is aangemaakt
+        let container = document.getElementsByTagName("game")[0]!
+
+        //"Game-over"-text verwerkt in container
+        container.appendChild(this.div)
 
         //Click voor nieuw spel
-        this.div = document.createElement("start")
-        document.body.appendChild(this.div)
-
-        //let text = document.createElement("h1")
-        this.div.innerHTML = "Game Over<br><br>Restart"
-
         this.div.addEventListener("click",()=> this.Clicked())
+        //Lege div gevuld met "Game over"
+        this.div.innerHTML = "Game Over Restart"
 
-        //Score op eindscherm.
-        let score = document.createElement("H3")
-        score.innerHTML = "Score: " + this.score
-        score.classList.add("endScore")
-        document.body.appendChild(score)
     }
+
     public update(): void {
+
     }
 
     private Clicked() {   

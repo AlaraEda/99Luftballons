@@ -1,25 +1,3 @@
-var Screens = (function () {
-    function Screens() {
-        this.background = document.createElement("background");
-        document.body.appendChild(this.background);
-        this.container = document.createElement("game");
-        document.body.appendChild(this.container);
-        this.screen = new StartScreen(this);
-    }
-    Screens.prototype.showPlayScreen = function () {
-        this.container.innerHTML = "";
-        this.screen = new Playscreen(this);
-    };
-    Screens.prototype.showEndScreen = function () {
-        this.container.innerHTML = "";
-        this.screen = new GameOverScreen(this);
-    };
-    return Screens;
-}());
-window.addEventListener("load", function () {
-    console.log("create new screens");
-    new Screens();
-});
 var Balloon = (function () {
     function Balloon() {
         var _this = this;
@@ -47,17 +25,14 @@ var Balloon = (function () {
     return Balloon;
 }());
 var GameOverScreen = (function () {
-    function GameOverScreen(g) {
+    function GameOverScreen(s) {
         var _this = this;
-        this.screen = g;
+        this.screen = s;
         this.div = document.createElement("start");
-        document.body.appendChild(this.div);
-        this.div.innerHTML = "Game Over<br><br>Restart";
+        var container = document.getElementsByTagName("game")[0];
+        container.appendChild(this.div);
         this.div.addEventListener("click", function () { return _this.Clicked(); });
-        var score = document.createElement("H3");
-        score.innerHTML = "Score: " + this.score;
-        score.classList.add("endScore");
-        document.body.appendChild(score);
+        this.div.innerHTML = "Game Over Restart";
     }
     GameOverScreen.prototype.update = function () {
     };
@@ -72,7 +47,7 @@ var Playscreen = (function () {
         this.screen = s;
         this.timer = new Timer();
         this.score = new Score();
-        for (var i = 0; i < 15; i++) {
+        for (var i = 0; i < 100; i++) {
             this.balloon.push(new Balloon());
         }
         this.gameLoop();
@@ -83,7 +58,7 @@ var Playscreen = (function () {
             var b = _a[_i];
             b.update();
             if (b.kapot == true) {
-                this.score.addScore(1);
+                this.score.addScore(457);
                 b.kapot = false;
             }
         }
@@ -113,6 +88,28 @@ var Score = (function () {
     };
     return Score;
 }());
+var Screens = (function () {
+    function Screens() {
+        this.background = document.createElement("background");
+        document.body.appendChild(this.background);
+        this.container = document.createElement("game");
+        document.body.appendChild(this.container);
+        this.screen = new StartScreen(this);
+    }
+    Screens.prototype.showPlayScreen = function () {
+        this.container.innerHTML = "";
+        this.screen = new Playscreen(this);
+    };
+    Screens.prototype.showEndScreen = function () {
+        this.container.innerHTML = "";
+        this.screen = new GameOverScreen(this);
+    };
+    return Screens;
+}());
+window.addEventListener("load", function () {
+    console.log("create new screens");
+    new Screens();
+});
 var StartScreen = (function () {
     function StartScreen(s) {
         var _this = this;
@@ -134,7 +131,7 @@ var StartScreen = (function () {
 }());
 var Timer = (function () {
     function Timer() {
-        this.secondes = 3000;
+        this.secondes = 200;
         this.posX = 0;
         this.posY = 0;
         this.finished = false;
@@ -148,7 +145,7 @@ var Timer = (function () {
         this.clock.style.transform = "translate(" + this.posX + "px, " + this.posY + "px)";
     }
     Timer.prototype.update = function () {
-        this.clock.innerHTML = "Teller " + Math.floor(this.secondes / 100);
+        this.clock.innerHTML = "Tijd " + Math.floor(this.secondes / 50);
         if (this.secondes > 0) {
             this.secondes--;
         }
