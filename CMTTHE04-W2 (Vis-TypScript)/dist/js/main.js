@@ -20,9 +20,11 @@ var Balloon = (function () {
         this.balloon.style.transform = "translate(" + this.x + "px, " + this.y + "px)";
     };
     Balloon.prototype.kapotteBallon = function () {
+        var _this = this;
         this.kapot = true;
         this.balloon.classList.add("dead");
         this.speedY = 2;
+        this.balloon.removeEventListener('click', function () { return _this.kapotteBallon; });
     };
     return Balloon;
 }());

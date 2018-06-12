@@ -31,6 +31,7 @@ class Playscreen {
                 b.kapot = false
                 this.score.addScore(10)
             }
+
      
         }
 

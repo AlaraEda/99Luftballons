@@ -40,6 +40,7 @@ class Balloon {
         
         //Wanneer geklikt word op ballon --> knak.
         this.balloon.addEventListener("click", ()=> this.kapotteBallon())
+        
     }
 
     update(){
@@ -53,9 +54,9 @@ class Balloon {
     kapotteBallon(){ 
         this.kapot = true                                                   //Verwijzing naar --> playscreen.ts
         this.balloon.classList.add("dead")                                 // Want in CSS staat de afbeelding van geknakte balloon als dood.
-        //this.balloon.removeEventListener("click", ()=> this.kapotteBallon())
-        this.speedY = 2                                                    // Snelheid waarmee geknakte ballon valt. 
-        
+        this.speedY = 2                                                    // Snelheid waarmee geknakte ballon valt.
+        this.balloon.removeEventListener('click', () => this.kapotteBallon)
+
         //Zorg ervoor dat je stukke ballonnen niet kan tellen.
     }
 }
