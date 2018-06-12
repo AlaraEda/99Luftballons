@@ -33,6 +33,10 @@ class Balloon {
         this.speedX = 0                                                     // X snelheid is 0 want de ballon gaat niet naar rechts. 
         this.speedY = Math.random() * - 7                                   // Ballon Y snelheid word random besloten.
     
+        //Kleuren ballon.
+        let randomNumber3 = Math.random() * 360
+        //this.balloon.style.webkitFilter = "hue-rotate("+ randomNumber3+ "deg)"
+        this.balloon.style.filter = "hue-rotate(" + randomNumber3 + "deg)"   //Binnen  0 - 360
         
         //Wanneer geklikt word op ballon --> knak.
         this.balloon.addEventListener("click", ()=> this.kapotteBallon())
@@ -46,9 +50,12 @@ class Balloon {
         this.balloon.style.transform = `translate(${this.x}px, ${this.y}px)` 
     }
 
-    kapotteBallon(){
-        this.kapot = true
+    kapotteBallon(){ 
+        this.kapot = true                                                   //Verwijzing naar --> playscreen.ts
         this.balloon.classList.add("dead")                                 // Want in CSS staat de afbeelding van geknakte balloon als dood.
-        this.speedY = 2                                                    // Snelheid waarmee geknakte ballon valt.               
+        //this.balloon.removeEventListener("click", ()=> this.kapotteBallon())
+        this.speedY = 2                                                    // Snelheid waarmee geknakte ballon valt. 
+        
+        //Zorg ervoor dat je stukke ballonnen niet kan tellen.
     }
 }

@@ -29,9 +29,7 @@ class StartScreen {
     }
 
     private startClicked() {   
-        //Wanneer je klikt, word je doorgestuurd naar game.ts (screens.ts)
-        console.log("clicked")
-        
+        //Wanneer je klikt, word je doorgestuurd naar game.ts (screens.ts)      
         this.screen.showPlayScreen()
     }
 }

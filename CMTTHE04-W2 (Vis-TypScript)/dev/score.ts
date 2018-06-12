@@ -25,4 +25,5 @@ class Score {
     public addScore(n:number){
         this.score += n
     }
+
 }

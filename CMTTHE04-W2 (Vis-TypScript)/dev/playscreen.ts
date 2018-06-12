@@ -14,7 +14,7 @@ class Playscreen {
         this.score = new Score()                //Maakt een nieuw Scoreboard aan.
 
         //Push aantal Balloon
-        for (let i = 0; i < 100; i++) {
+        for (let i = 0; i < 20; i++) {
            this.balloon.push(new Balloon())
         }
        this.gameLoop()
@@ -28,8 +28,8 @@ class Playscreen {
             b.update()
 
             if (b.kapot == true){
-                this.score.addScore(10)
                 b.kapot = false
+                this.score.addScore(10)
             }
      
         }

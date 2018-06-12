@@ -10,6 +10,8 @@ var Balloon = (function () {
         this.y = window.innerHeight + Math.random();
         this.speedX = 0;
         this.speedY = Math.random() * -7;
+        var randomNumber3 = Math.random() * 360;
+        this.balloon.style.filter = "hue-rotate(" + randomNumber3 + "deg)";
         this.balloon.addEventListener("click", function () { return _this.kapotteBallon(); });
     }
     Balloon.prototype.update = function () {
@@ -47,7 +49,7 @@ var Playscreen = (function () {
         this.screen = s;
         this.timer = new Timer();
         this.score = new Score();
-        for (var i = 0; i < 100; i++) {
+        for (var i = 0; i < 20; i++) {
             this.balloon.push(new Balloon());
         }
         this.gameLoop();
@@ -58,8 +60,8 @@ var Playscreen = (function () {
             var b = _a[_i];
             b.update();
             if (b.kapot == true) {
-                this.score.addScore(10);
                 b.kapot = false;
+                this.score.addScore(10);
             }
         }
         this.timer.update();
@@ -126,7 +128,6 @@ var StartScreen = (function () {
     StartScreen.prototype.update = function () {
     };
     StartScreen.prototype.startClicked = function () {
-        console.log("clicked");
         this.screen.showPlayScreen();
     };
     return StartScreen;
