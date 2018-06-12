@@ -19,6 +19,9 @@ var Balloon = (function () {
         this.x += this.speedX;
         this.y += this.speedY;
         this.balloon.style.transform = "translate(" + this.x + "px, " + this.y + "px)";
+        if (this.y < -100) {
+            this.y = 708;
+        }
     };
     Balloon.prototype.kapotteBallon = function () {
         if (this.kapot == false) {
@@ -53,7 +56,7 @@ var Playscreen = (function () {
         this.screen = s;
         this.timer = new Timer();
         this.score = new Score();
-        for (var i = 0; i < 20; i++) {
+        for (var i = 0; i < 2; i++) {
             this.balloon.push(new Balloon(this.score));
         }
         this.gameLoop();

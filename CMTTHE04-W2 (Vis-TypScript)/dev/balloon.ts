@@ -19,6 +19,7 @@ class Balloon {
         this.balloon = document.createElement("balloon")            
         document.body.appendChild(this.balloon)
         
+        
         //Een container is aamgemaakt --> container 0
         let container = document.getElementsByTagName("game")[0]!
         
@@ -29,16 +30,18 @@ class Balloon {
         //Window.InnerHeight = 708
         this.x = Math.random() * window.innerWidth - 40                     // Random positie in window x-as, -40 zodat het niet op het randje van het scherm zit.
         this.y = window.innerHeight + Math.random()                         // * 700 zorgt ervoor dat de ballonnen lager (buiten het scherm) starten.
+        //this.y = 0
 
         //Snelheid waarop Ballon omhoog gaat. 
         this.speedX = 0                                                     // X snelheid is 0 want de ballon gaat niet naar rechts. 
-        this.speedY = Math.random() * - 7                                   // Ballon Y snelheid word random besloten.
-    
+        //this.speedY = 0
+        this.speedY = Math.random() * - 7                                   // Ballon Y snelheid word random besloten.   
+
         //Kleuren ballon.
         let randomNumber3 = Math.random() * 360
         //this.balloon.style.webkitFilter = "hue-rotate("+ randomNumber3+ "deg)"
         this.balloon.style.filter = "hue-rotate(" + randomNumber3 + "deg)"   //Binnen  0 - 360
-        
+
         //Wanneer geklikt word op ballon --> knak.
         this.balloon.addEventListener("click", ()=> this.kapotteBallon())
         
@@ -50,6 +53,11 @@ class Balloon {
 
         //Laat de update van de balloon zien.
         this.balloon.style.transform = `translate(${this.x}px, ${this.y}px)` 
+
+        //plafond geraakt--> kom terug.
+        if (this.y < -100){
+            this.y = 708
+        }
     }
 
     kapotteBallon(){
@@ -60,7 +68,8 @@ class Balloon {
         this.balloon.classList.add("dead")                                 // Want in CSS staat de afbeelding van geknakte balloon als dood.
         this.speedY = 2                                                    // Snelheid waarmee geknakte ballon valt.
 
-
         //Zorg ervoor dat je stukke ballonnen niet kan tellen.
     }
+
+    
 }
