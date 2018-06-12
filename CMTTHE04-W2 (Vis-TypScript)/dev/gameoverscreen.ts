@@ -1,15 +1,11 @@
 class GameOverScreen {
-    //game: Game
-
     private div: HTMLElement
     screen: Screens
     
-
     constructor(s: Screens) {
         this.screen = s
-        
 
-        //Lege div is gecreeerd.
+        //Lege div is gecreeerd/opgehaald uit style.css
         this.div = document.createElement("start")
 
         //Een container is aangemaakt

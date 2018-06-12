@@ -28,7 +28,7 @@ class Playscreen {
             b.update()
 
             if (b.kapot == true){
-                this.score.addScore(457)
+                this.score.addScore(10)
                 b.kapot = false
             }
      

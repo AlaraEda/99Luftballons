@@ -33,6 +33,7 @@ class Balloon {
         this.speedX = 0                                                     // X snelheid is 0 want de ballon gaat niet naar rechts. 
         this.speedY = Math.random() * - 7                                   // Ballon Y snelheid word random besloten.
     
+        
         //Wanneer geklikt word op ballon --> knak.
         this.balloon.addEventListener("click", ()=> this.kapotteBallon())
     }

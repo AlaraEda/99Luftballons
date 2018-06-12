@@ -8,11 +8,13 @@ class Score {
     private posX : number = 0
     private posY : number
 
-
     constructor(){
         //Creeer scorebord in HTML
         this.scoreboard = document.createElement("score")
         document.body.appendChild(this.scoreboard)
+
+        let container = document.getElementsByTagName("game")[0]!
+        container.appendChild(this.scoreboard)
     }
 
     update(){
@@ -23,6 +25,4 @@ class Score {
     public addScore(n:number){
         this.score += n
     }
-    
-    //Maak een functie waarbij score weer 0 is.
 }

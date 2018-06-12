@@ -58,7 +58,7 @@ var Playscreen = (function () {
             var b = _a[_i];
             b.update();
             if (b.kapot == true) {
-                this.score.addScore(457);
+                this.score.addScore(10);
                 b.kapot = false;
             }
         }
@@ -79,6 +79,8 @@ var Score = (function () {
         this.posX = 0;
         this.scoreboard = document.createElement("score");
         document.body.appendChild(this.scoreboard);
+        var container = document.getElementsByTagName("game")[0];
+        container.appendChild(this.scoreboard);
     }
     Score.prototype.update = function () {
         this.scoreboard.innerHTML = "Score: " + this.score;
@@ -131,7 +133,7 @@ var StartScreen = (function () {
 }());
 var Timer = (function () {
     function Timer() {
-        this.secondes = 200;
+        this.secondes = 2000;
         this.posX = 0;
         this.posY = 0;
         this.finished = false;

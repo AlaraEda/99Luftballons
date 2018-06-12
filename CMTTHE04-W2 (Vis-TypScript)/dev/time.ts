@@ -4,7 +4,7 @@ class Timer {
     over: GameOverScreen
 
     //5 minuten
-    private secondes : number = 200
+    private secondes : number = 2000
 
     //Position
     private posX : number = 0
