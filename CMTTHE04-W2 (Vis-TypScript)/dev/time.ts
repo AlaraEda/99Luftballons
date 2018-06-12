@@ -10,9 +10,12 @@ class Timer {
     private posX : number = 0
     private posY : number = 0
 
+    public finished:boolean = false
+
     score: number = 5
 
     constructor() {
+        
         //Creeer Clock in HTML
         this.div = document.createElement("clock")
         document.body.appendChild(this.div)
@@ -25,6 +28,8 @@ class Timer {
 
         //Laat de update van de balloon zien.
         this.div.style.transform = `translate(${this.posX}px, ${this.posY}px)`
+
+
     }
       
     update(){
@@ -34,11 +39,9 @@ class Timer {
         if (this.secondes > 0){
             //Update dat er elke seconde word afgeteld.
             this.secondes--
-            console.log("Game Over")
-        }
-        else{
-            //Stuur door naar gameoverschreen.ts
-            this.over = new GameOverScreen(this.score)
+        } else{
+            //Door gestuurd naar game over screen. 
+            this.finished = true
         }
     } 
 }

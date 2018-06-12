@@ -4,16 +4,24 @@ class StartScreen {
     private div: HTMLElement
     private screen : Screens
 
+
     constructor(s:Screens) {
-       this.screen = s
+        console.log("IK BEN EEN START SCREEN");
+        
+        //screen moet een waarde hebben
+        this.screen = s
+
+        
 
         //Splash element is opgehaald van style.css & verwerkt in index.html
         this.div = document.createElement("start")
-        document.body.appendChild(this.div)
+        let container = document.getElementsByTagName("game")[0]!
+        
+        container.appendChild(this.div)
 
         //Als je klikt word slashClicked functie uitgevoerd.
         this.div.addEventListener("click", ()=>this.startClicked())
-        this.div.innerHTML = "START THE GAME"
+        this.div.innerHTML = "START MY GAME"
     }
 
     //Update functie
@@ -21,7 +29,9 @@ class StartScreen {
     }
 
     private startClicked() {   
-        //Wanneer je klikt, word je doorgestuurd naar game.ts (allScreens.ts)
+        //Wanneer je klikt, word je doorgestuurd naar game.ts (screens.ts)
+        console.log("clicked")
+        
         this.screen.showPlayScreen()
     }
 }

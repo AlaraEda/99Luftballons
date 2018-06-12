@@ -13,9 +13,9 @@ class Playscreen {
 
         //Push aantal Balloon
         for (let i = 0; i < 15; i++) {
-            this.balloons.push(new Balloon())
+           this.balloons.push(new Balloon())
         }
-        this.gameLoop()
+       this.gameLoop()
     }
     
     private gameLoop(){
@@ -31,13 +31,13 @@ class Playscreen {
         //Upate de Scorebord die staat in score.ts
         this.score.update()
     
+        if(this.timer.finished == true) {
+            this.screen.showEndScreen()
+            // roep de gameover functie aan van screens
+        } else {
+
         //Herhaal deze functie.
-        requestAnimationFrame(()=>this.gameLoop())
+         requestAnimationFrame(()=>this.gameLoop())
+        }
     }   
 }
-
-// Creates new Game instance when page is loaded.
-// Laat het startscherm als eerste zien;
-window.addEventListener("load", function () {
-    new Screens()
-});

@@ -2,47 +2,49 @@
 //Alle schermen worden hierin opgeroepen.
 class Screens {
     screen: any
+    container:HTMLElement
     
     constructor() {
+        console.log("ik ben een screens instance");
+
+        this.container = document.createElement("game")
+        document.body.appendChild(this.container)
+        
         //Variabel "Screen" aanmaken die verwijst naar statscreen.ts class
         this.screen = new StartScreen(this)
-
-        //Speel gameloop functie af.
-        this.gameLoop()        
     }
 
     //Word hiernaar toe gestuurd via startscreen.ts
     //Richt je door naar playsreen.ts
     public showPlayScreen(){
+        console.log("dit is de showplayscreen functie");
+        
 
         //Dit maakt de body van html leeg, zodat je alleen het achergrond ziet.
-        document.body.innerHTML = ""
+        this.container.innerHTML = ""
         
         let bg = document.createElement('background');
-        document.body.appendChild(bg);
+        this.container.appendChild(bg);
         
         //"This" is een instance. Doorgestuurd naar "main.ts"
-         this.screen = new Playscreen(this)
+        this.screen = new Playscreen(this)
     }
 
     // //Word afgespeeld wanneer playscreen.ts is uitgespeeld
-    public showEndScreen(score:number){
+    public showEndScreen(){
         //Leegt de screen
-        document.body.innerHTML = ""
+        this.container.innerHTML = ""
 
         //Neemt "score" parameter in zich mee van playscreen.ts
         //Gaat met deze functie naar gameover.ts
-        this.screen = new GameOverScreen(score)
+       // this.screen = new GameOverScreen(5)
     }
 
-    private gameLoop():void{
-        //Update screen aanroepen
-        this.screen.update()
-
-        //update gameloop 60x per seconde
-        requestAnimationFrame(() => this.gameLoop())
-    }
 } 
 
 //Laat venster = new game
-window.addEventListener("load", () => new Screens())
+window.addEventListener("load", () => {
+    console.log("create new scfreens");
+    
+    new Screens()
+})

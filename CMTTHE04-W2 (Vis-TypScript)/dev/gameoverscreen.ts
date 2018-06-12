@@ -1,27 +1,23 @@
 class GameOverScreen {
     //game: Game
-    screens: Screens
+
+    private div: HTMLElement
+    private screen: Screens
     score: number
-    //private div: HTMLElement
 
     //             this,  score
     constructor(s: number) {
         this.score = s
 
         //Click voor nieuw spel
-        let text = document.createElement("h1")
-        text.innerHTML = "Game Over<br><br>Restart"
-        text.classList.add("splash")
-        text.addEventListener("click",()=> this.Clicked())
-        document.body.appendChild(text)
+        this.div = document.createElement("start")
+        document.body.appendChild(this.div)
 
-        // //Splash element is opgehaald van style.css & verwerkt in index.html
-        // this.div = document.createElement("splash")
-        // document.body.appendChild(this.div)
+        //let text = document.createElement("h1")
+        this.div.innerHTML = "Game Over<br><br>Restart"
 
-        // //Als je klikt word slashClicked functie uitgevoerd.
-        // this.div.addEventListener("click", ()=>this.Clicked())
-        // this.div.innerHTML = "GAME OVER"
+
+        this.div.addEventListener("click",()=> this.Clicked())
 
         //Score op eindscherm.
         let score = document.createElement("H3")
@@ -35,6 +31,6 @@ class GameOverScreen {
     private Clicked() {   
         //Wanneer je klikt, word je doorgestuurd naar game.ts
         //Waarna je doorgestuurd word naar de showPlayScreen() functie.
-        this.screens.showPlayScreen()
+        this.screen.showPlayScreen()
     }
 }

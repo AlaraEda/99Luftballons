@@ -1,26 +1,3 @@
-var Screens = (function () {
-    function Screens() {
-        this.screen = new StartScreen(this);
-        this.gameLoop();
-    }
-    Screens.prototype.showPlayScreen = function () {
-        document.body.innerHTML = "";
-        var bg = document.createElement('background');
-        document.body.appendChild(bg);
-        this.screen = new Playscreen(this);
-    };
-    Screens.prototype.showEndScreen = function (score) {
-        document.body.innerHTML = "";
-        this.screen = new GameOverScreen(score);
-    };
-    Screens.prototype.gameLoop = function () {
-        var _this = this;
-        this.screen.update();
-        requestAnimationFrame(function () { return _this.gameLoop(); });
-    };
-    return Screens;
-}());
-window.addEventListener("load", function () { return new Screens(); });
 var Balloon = (function () {
     function Balloon() {
         var _this = this;
@@ -47,11 +24,10 @@ var GameOverScreen = (function () {
     function GameOverScreen(s) {
         var _this = this;
         this.score = s;
-        var text = document.createElement("h1");
-        text.innerHTML = "Game Over<br><br>Restart";
-        text.classList.add("splash");
-        text.addEventListener("click", function () { return _this.Clicked(); });
-        document.body.appendChild(text);
+        this.div = document.createElement("start");
+        document.body.appendChild(this.div);
+        this.div.innerHTML = "Game Over<br><br>Restart";
+        this.div.addEventListener("click", function () { return _this.Clicked(); });
         var score = document.createElement("H3");
         score.innerHTML = "Score: " + this.score;
         score.classList.add("endScore");
@@ -60,7 +36,7 @@ var GameOverScreen = (function () {
     GameOverScreen.prototype.update = function () {
     };
     GameOverScreen.prototype.Clicked = function () {
-        this.screens.showPlayScreen();
+        this.screen.showPlayScreen();
     };
     return GameOverScreen;
 }());
@@ -83,13 +59,15 @@ var Playscreen = (function () {
         }
         this.timer.update();
         this.score.update();
-        requestAnimationFrame(function () { return _this.gameLoop(); });
+        if (this.timer.finished == true) {
+            this.screen.showEndScreen();
+        }
+        else {
+            requestAnimationFrame(function () { return _this.gameLoop(); });
+        }
     };
     return Playscreen;
 }());
-window.addEventListener("load", function () {
-    new Screens();
-});
 var Score = (function () {
     function Score() {
         this.score = 0;
@@ -103,18 +81,44 @@ var Score = (function () {
     };
     return Score;
 }());
+var Screens = (function () {
+    function Screens() {
+        console.log("ik ben een screens instance");
+        this.container = document.createElement("game");
+        document.body.appendChild(this.container);
+        this.screen = new StartScreen(this);
+    }
+    Screens.prototype.showPlayScreen = function () {
+        console.log("dit is de showplayscreen functie");
+        this.container.innerHTML = "";
+        var bg = document.createElement('background');
+        this.container.appendChild(bg);
+        this.screen = new Playscreen(this);
+    };
+    Screens.prototype.showEndScreen = function () {
+        this.container.innerHTML = "";
+    };
+    return Screens;
+}());
+window.addEventListener("load", function () {
+    console.log("create new scfreens");
+    new Screens();
+});
 var StartScreen = (function () {
     function StartScreen(s) {
         var _this = this;
+        console.log("IK BEN EEN START SCREEN");
         this.screen = s;
         this.div = document.createElement("start");
-        document.body.appendChild(this.div);
+        var container = document.getElementsByTagName("game")[0];
+        container.appendChild(this.div);
         this.div.addEventListener("click", function () { return _this.startClicked(); });
-        this.div.innerHTML = "START THE GAME";
+        this.div.innerHTML = "START MY GAME";
     }
     StartScreen.prototype.update = function () {
     };
     StartScreen.prototype.startClicked = function () {
+        console.log("clicked");
         this.screen.showPlayScreen();
     };
     return StartScreen;
@@ -124,6 +128,7 @@ var Timer = (function () {
         this.secondes = 300;
         this.posX = 0;
         this.posY = 0;
+        this.finished = false;
         this.score = 5;
         this.div = document.createElement("clock");
         document.body.appendChild(this.div);
@@ -135,10 +140,9 @@ var Timer = (function () {
         this.div.innerHTML = "Teller " + Math.floor(this.secondes / 100);
         if (this.secondes > 0) {
             this.secondes--;
-            console.log("Game Over");
         }
         else {
-            this.over = new GameOverScreen(this.score);
+            this.finished = true;
         }
     };
     return Timer;
