@@ -16,6 +16,12 @@ class Balloon {
         this.balloon = document.createElement("balloon")            
         document.body.appendChild(this.balloon)
         
+        //Een container is aamgemaakt --> container 0
+        let container = document.getElementsByTagName("game")[0]!
+        
+        //"Ballonnen-Afbeelding" is gestopt in container 0
+        container.appendChild(this.balloon)
+
         //Window.InnerWidth = 1014
         //Window.InnerHeight = 708
         this.x = Math.random() * window.innerWidth - 40                     // Random positie in window x-as, -40 zodat het niet op het randje van het scherm zit.

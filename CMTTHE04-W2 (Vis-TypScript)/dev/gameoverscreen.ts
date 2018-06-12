@@ -2,12 +2,11 @@ class GameOverScreen {
     //game: Game
 
     private div: HTMLElement
-    private screen: Screens
+    screen: Screens
     score: number
 
-    //             this,  score
-    constructor(s: number) {
-        this.score = s
+    constructor(g: Screens) {
+        this.screen = g
 
         //Click voor nieuw spel
         this.div = document.createElement("start")

@@ -2,14 +2,21 @@
 //Alle schermen worden hierin opgeroepen.
 class Screens {
     screen: any
-    container:HTMLElement
-    
-    constructor() {
-        console.log("ik ben een screens instance");
 
+    private container: HTMLElement
+    private background : HTMLElement                                           
+        
+    constructor() {
+        //console.log("ik ben een screens instance");
+
+        //Creert achtergrond voor alle screens hetzelfde.
+        this.background = document.createElement("background")            
+        document.body.appendChild(this.background)
+
+        //Een lege container
         this.container = document.createElement("game")
         document.body.appendChild(this.container)
-        
+
         //Variabel "Screen" aanmaken die verwijst naar statscreen.ts class
         this.screen = new StartScreen(this)
     }
@@ -17,24 +24,23 @@ class Screens {
     //Word hiernaar toe gestuurd via startscreen.ts
     //Richt je door naar playsreen.ts
     public showPlayScreen(){
-        console.log("dit is de showplayscreen functie");
-        
-
-        //Dit maakt de body van html leeg, zodat je alleen het achergrond ziet.
+     
+        //"Start-Text" van startscreen.ts word weggehaald uit container.
         this.container.innerHTML = ""
         
-        let bg = document.createElement('background');
-        this.container.appendChild(bg);
+        // let bg = document.createElement('background');
+        // this.container.appendChild(bg);
         
         //"This" is een instance. Doorgestuurd naar "main.ts"
         this.screen = new Playscreen(this)
     }
 
-    // //Word afgespeeld wanneer playscreen.ts is uitgespeeld
+    //Word afgespeeld wanneer playscreen.ts is uitgespeeld
     public showEndScreen(){
-        //Leegt de screen
+        //"Ballonnen", "score", "timer" van playscreen.ts word weggehaald uit container.
         this.container.innerHTML = ""
 
+        this.screen = new GameOverScreen(this)
         //Neemt "score" parameter in zich mee van playscreen.ts
         //Gaat met deze functie naar gameover.ts
        // this.screen = new GameOverScreen(5)
@@ -44,7 +50,7 @@ class Screens {
 
 //Laat venster = new game
 window.addEventListener("load", () => {
-    console.log("create new scfreens");
+    console.log("create new screens");
     
     new Screens()
 })

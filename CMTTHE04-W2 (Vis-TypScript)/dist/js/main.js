@@ -1,8 +1,32 @@
+var Screens = (function () {
+    function Screens() {
+        this.background = document.createElement("background");
+        document.body.appendChild(this.background);
+        this.container = document.createElement("game");
+        document.body.appendChild(this.container);
+        this.screen = new StartScreen(this);
+    }
+    Screens.prototype.showPlayScreen = function () {
+        this.container.innerHTML = "";
+        this.screen = new Playscreen(this);
+    };
+    Screens.prototype.showEndScreen = function () {
+        this.container.innerHTML = "";
+        this.screen = new GameOverScreen(this);
+    };
+    return Screens;
+}());
+window.addEventListener("load", function () {
+    console.log("create new screens");
+    new Screens();
+});
 var Balloon = (function () {
     function Balloon() {
         var _this = this;
         this.balloon = document.createElement("balloon");
         document.body.appendChild(this.balloon);
+        var container = document.getElementsByTagName("game")[0];
+        container.appendChild(this.balloon);
         this.x = Math.random() * window.innerWidth - 40;
         this.y = window.innerHeight + Math.random();
         this.speedX = 0;
@@ -21,9 +45,9 @@ var Balloon = (function () {
     return Balloon;
 }());
 var GameOverScreen = (function () {
-    function GameOverScreen(s) {
+    function GameOverScreen(g) {
         var _this = this;
-        this.score = s;
+        this.screen = g;
         this.div = document.createElement("start");
         document.body.appendChild(this.div);
         this.div.innerHTML = "Game Over<br><br>Restart";
@@ -41,9 +65,9 @@ var GameOverScreen = (function () {
     return GameOverScreen;
 }());
 var Playscreen = (function () {
-    function Playscreen(g) {
+    function Playscreen(s) {
         this.balloons = [];
-        this.screen = g;
+        this.screen = s;
         this.timer = new Timer();
         this.score = new Score();
         for (var i = 0; i < 15; i++) {
@@ -81,29 +105,6 @@ var Score = (function () {
     };
     return Score;
 }());
-var Screens = (function () {
-    function Screens() {
-        console.log("ik ben een screens instance");
-        this.container = document.createElement("game");
-        document.body.appendChild(this.container);
-        this.screen = new StartScreen(this);
-    }
-    Screens.prototype.showPlayScreen = function () {
-        console.log("dit is de showplayscreen functie");
-        this.container.innerHTML = "";
-        var bg = document.createElement('background');
-        this.container.appendChild(bg);
-        this.screen = new Playscreen(this);
-    };
-    Screens.prototype.showEndScreen = function () {
-        this.container.innerHTML = "";
-    };
-    return Screens;
-}());
-window.addEventListener("load", function () {
-    console.log("create new scfreens");
-    new Screens();
-});
 var StartScreen = (function () {
     function StartScreen(s) {
         var _this = this;
@@ -125,19 +126,21 @@ var StartScreen = (function () {
 }());
 var Timer = (function () {
     function Timer() {
-        this.secondes = 300;
+        this.secondes = 3000;
         this.posX = 0;
         this.posY = 0;
         this.finished = false;
         this.score = 5;
-        this.div = document.createElement("clock");
-        document.body.appendChild(this.div);
-        this.div.innerHTML = "Tijd: 500";
+        this.clock = document.createElement("clock");
+        document.body.appendChild(this.clock);
+        this.clock.innerHTML = "Tijd: 500";
+        var container = document.getElementsByTagName("game")[0];
+        container.appendChild(this.clock);
         this.posX = (innerWidth / 2) - 150;
-        this.div.style.transform = "translate(" + this.posX + "px, " + this.posY + "px)";
+        this.clock.style.transform = "translate(" + this.posX + "px, " + this.posY + "px)";
     }
     Timer.prototype.update = function () {
-        this.div.innerHTML = "Teller " + Math.floor(this.secondes / 100);
+        this.clock.innerHTML = "Teller " + Math.floor(this.secondes / 100);
         if (this.secondes > 0) {
             this.secondes--;
         }

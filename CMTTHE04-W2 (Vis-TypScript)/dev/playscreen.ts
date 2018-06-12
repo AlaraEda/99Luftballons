@@ -5,9 +5,12 @@ class Playscreen {
     score : Score
     balloons:Balloon[] = []
 
-    constructor(g:Screens) {
-        this.screen = g
+    constructor(s:Screens) {
+        //Screen moet een waarde hebben
+        this.screen = s
+    
         this.timer = new Timer()                //Maak Timer aan van Timer class.
+        
 
         this.score = new Score()                //Maakt een nieuw Scoreboard aan.
 
