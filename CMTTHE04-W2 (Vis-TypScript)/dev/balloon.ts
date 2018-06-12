@@ -54,10 +54,12 @@ class Balloon {
         //Laat de update van de balloon zien.
         this.balloon.style.transform = `translate(${this.x}px, ${this.y}px)` 
 
-        //plafond geraakt--> kom terug.
+        //Plafond geraakt--> begin van beneden.
         if (this.y < -100){
             this.y = 708
         }
+
+
     }
 
     kapotteBallon(){
@@ -67,9 +69,5 @@ class Balloon {
         this.kapot = true                                                   //Verwijzing naar --> playscreen.ts
         this.balloon.classList.add("dead")                                 // Want in CSS staat de afbeelding van geknakte balloon als dood.
         this.speedY = 2                                                    // Snelheid waarmee geknakte ballon valt.
-
-        //Zorg ervoor dat je stukke ballonnen niet kan tellen.
     }
-
-    
 }

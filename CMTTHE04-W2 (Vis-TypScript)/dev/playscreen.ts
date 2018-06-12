@@ -13,11 +13,11 @@ class Playscreen {
         
         this.score = new Score()                //Maakt een nieuw Scoreboard aan.
 
-        
         //Push aantal Balloon
-        for (let i = 0; i < 2; i++) {
+        for (let i = 0; i < 1; i++) {
             
            this.balloon.push(new Balloon(this.score))
+
         }
        this.gameLoop()
 
@@ -27,9 +27,7 @@ class Playscreen {
         //Update elke balloon die aangemaakt word.
         for(let b of this.balloon){
             //update staat in balloon.ts
-            
             b.update()
-
         }
 
         //Update de timer die staat in time.ts
