@@ -62,7 +62,7 @@ var Playscreen = (function () {
         this.screen = s;
         this.timer = new Timer();
         this.score = new Score();
-        for (var i = 0; i < 1; i++) {
+        for (var i = 0; i < 20; i++) {
             this.balloon.push(new Balloon(this.score));
         }
         this.gameLoop();

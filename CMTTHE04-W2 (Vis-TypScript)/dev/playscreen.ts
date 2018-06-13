@@ -14,7 +14,7 @@ class Playscreen {
         this.score = new Score()                //Maakt een nieuw Scoreboard aan.
 
         //Push aantal Balloon
-        for (let i = 0; i < 1; i++) {
+        for (let i = 0; i < 20; i++) {
             
            this.balloon.push(new Balloon(this.score))
 
