@@ -51,6 +51,5 @@ class Screens {
 //Laat venster = new game
 window.addEventListener("load", () => {
     console.log("create new screens");
-    
     new Screens()
 })
