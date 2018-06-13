@@ -30,6 +30,12 @@ var Balloon = (function () {
         this.kapot = true;
         this.balloon.classList.add("dead");
         this.speedY = 2;
+        if (this.speedY++) {
+            console.log("Omlaag");
+        }
+        if (this.y++) {
+            console.log("Lower");
+        }
     };
     return Balloon;
 }());
