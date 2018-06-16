@@ -1,3 +1,25 @@
+var Screens = (function () {
+    function Screens() {
+        this.background = document.createElement("background");
+        document.body.appendChild(this.background);
+        this.container = document.createElement("game");
+        document.body.appendChild(this.container);
+        this.screen = new StartScreen(this);
+    }
+    Screens.prototype.showPlayScreen = function () {
+        this.container.innerHTML = "";
+        this.screen = new Playscreen(this);
+    };
+    Screens.prototype.showEndScreen = function () {
+        this.container.innerHTML = "";
+        this.screen = new GameOverScreen(this);
+    };
+    return Screens;
+}());
+window.addEventListener("load", function () {
+    console.log("create new screens");
+    new Screens();
+});
 var Balloon = (function () {
     function Balloon(s) {
         var _this = this;
@@ -62,9 +84,13 @@ var Playscreen = (function () {
         this.screen = s;
         this.timer = new Timer();
         this.score = new Score();
-        for (var i = 0; i < 20; i++) {
+        for (var i = 0; i < 30; i++) {
             this.balloon.push(new Balloon(this.score));
         }
+        var sound = new Howl({
+            src: ['https://www.cs.unc.edu/~gb/uploaded-files/plebeian@CS.UNC.EDU/Rick%20Astley%20-%20Never%20Gonna%20Give%20You%20Up.mp3']
+        });
+        sound.play();
         this.gameLoop();
     }
     Playscreen.prototype.gameLoop = function () {
@@ -101,28 +127,6 @@ var Score = (function () {
     };
     return Score;
 }());
-var Screens = (function () {
-    function Screens() {
-        this.background = document.createElement("background");
-        document.body.appendChild(this.background);
-        this.container = document.createElement("game");
-        document.body.appendChild(this.container);
-        this.screen = new StartScreen(this);
-    }
-    Screens.prototype.showPlayScreen = function () {
-        this.container.innerHTML = "";
-        this.screen = new Playscreen(this);
-    };
-    Screens.prototype.showEndScreen = function () {
-        this.container.innerHTML = "";
-        this.screen = new GameOverScreen(this);
-    };
-    return Screens;
-}());
-window.addEventListener("load", function () {
-    console.log("create new screens");
-    new Screens();
-});
 var StartScreen = (function () {
     function StartScreen(s) {
         var _this = this;

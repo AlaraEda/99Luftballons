@@ -4,6 +4,7 @@ class Playscreen {
     timer : Timer
     score : Score
     balloon:Balloon[] = []
+    
 
     constructor(s:Screens) {
         //Screen moet een waarde hebben
@@ -17,9 +18,16 @@ class Playscreen {
         for (let i = 0; i < 30; i++) {
             
            this.balloon.push(new Balloon(this.score))
-
         }
+        
+        var sound = new Howl({
+            src: ['https://www.cs.unc.edu/~gb/uploaded-files/plebeian@CS.UNC.EDU/Rick%20Astley%20-%20Never%20Gonna%20Give%20You%20Up.mp3']
+          });
+          
+          sound.play();
+          
        this.gameLoop()
+
 
     }
     
