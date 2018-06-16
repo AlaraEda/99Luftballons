@@ -90,7 +90,6 @@ var Playscreen = (function () {
         var sound = new Howl({
             src: ['https://www.cs.unc.edu/~gb/uploaded-files/plebeian@CS.UNC.EDU/Rick%20Astley%20-%20Never%20Gonna%20Give%20You%20Up.mp3']
         });
-        sound.play();
         this.gameLoop();
     }
     Playscreen.prototype.gameLoop = function () {
