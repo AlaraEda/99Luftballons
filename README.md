@@ -43,6 +43,8 @@ Licht toe waar en waarom je deze OOP principes hebt toegepast
    
  - **Composition**
    - *Waarom toegepast?*
+   
+   
    - *Waar toegepast?*
    
  - **Inheritance**
