@@ -36,6 +36,7 @@ Licht toe waar en waarom je deze OOP principes hebt toegepast
    Protected daarintegen gebruik je alléen als je wilt dat je "children" je code kunnen aanpassen & de rest niet.
    
    - *Waar toegepast?*
+   
    Encapsulation is in al mijn dev bestanden gebruikt. Als voorbeeld geef ik hierom alweer de playscreen.ts;
    
    <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/classes.JPG" width = "100">
