@@ -49,8 +49,14 @@ Licht toe waar en waarom je deze OOP principes hebt toegepast
    
  - **Inheritance**
    - *Waarom toegepast?*
+   Inheritance is handig om te gebruiken wanneer je 2 (of meer objecten) hebt die bestaan uit precies dezelfde code. Zodat je je eigen code dus niet meerdere malen hoeft te herhalen maak je een aparate Class aan waar je de stukken-code die je objecten gemeen hebben in staan verwerkt. Doormiddel van extends kan je dan je Class "verlengen". 
+   
    - *Waar toegepast?*
+Ik heb inheritance toegepast op "startscreen.ts" & "gamescreen.ts". Ik heb allebei "verlengt" met "gameobject.ts" zoals hier beneden zichtbaar is;
 
+    <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/gameobject.jpg" width = "100">
+    <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/gameoverscreen.jpg">
+    <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/startscreen.jpg">
 
 ## Klassendiagram
 
