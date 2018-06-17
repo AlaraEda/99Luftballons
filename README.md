@@ -39,7 +39,7 @@ Licht toe waar en waarom je deze OOP principes hebt toegepast
    
    Encapsulation is in al mijn dev bestanden gebruikt. Als voorbeeld geef ik hierom alweer de playscreen.ts;
    
-   <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/classes.JPG" width = "100">
+    <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/classes.JPG">
    
  - **Composition**
    - *Waarom toegepast?*
