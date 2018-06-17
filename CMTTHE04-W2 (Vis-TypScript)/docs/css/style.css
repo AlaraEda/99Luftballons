@@ -32,17 +32,6 @@ balloon {
     filter: hue-rotate(90deg);
 }
 
-start {
-  font-size:4em;
-  cursor: pointer;
-  width:500px;
-  height:100px;
-  color: white;
-  margin-top:calc(50vh - 50px);
-  margin-left:calc(50vw - 250px);
-  text-align:center;
-}
-
 background {
 	background-image: url(../images/zee2.jpg);
   width:100%; height: 100%;
