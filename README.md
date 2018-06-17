@@ -54,9 +54,9 @@ Licht toe waar en waarom je deze OOP principes hebt toegepast
    - *Waar toegepast?*
 Ik heb inheritance toegepast op "startscreen.ts" & "gamescreen.ts". Ik heb allebei "verlengt" met "gameobject.ts" zoals hier beneden zichtbaar is;
 
-    <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/gameobject.jpg" width = "300">
-    <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/gameoverscreen.jpg" width = "300">
-    <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/startscreen.jpg" width = "300">
+    <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/gameobject.jpg" width = "200">
+    <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/gameoverscreen.jpg" width = "200">
+    <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/startscreen.jpg" width = "200">
 
 ## Klassendiagram
 
