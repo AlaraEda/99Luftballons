@@ -1,53 +1,40 @@
 class Timer {
-    private clock:HTMLElement
-
-    over: GameOverScreen
+    private div:HTMLElement
 
     //5 minuten
-    private secondes : number = 2000
+    private secondes : number = 30000
 
     //Position
     private posX : number = 0
     private posY : number = 0
 
-    public finished:boolean = false
-
-    score: number = 5
-
     constructor() {
-        
         //Creeer Clock in HTML
-        this.clock = document.createElement("clock")
-        document.body.appendChild(this.clock)
+        this.div = document.createElement("clock")
+        document.body.appendChild(this.div)
 
         //Zorg dat er standaard 500 start.
-        this.clock.innerHTML = "Tijd: 500"
-
-        //Een container is aangemaakt --> container 0
-        let container = document.getElementsByTagName("game")[0]!
-
-        //"Ballonnen-Afbeelding" is gestopt in container 0
-        container.appendChild(this.clock)
+        this.div.innerHTML = "Tijd: 500"
 
         //Timer Positie
         this.posX = (innerWidth/2)-150
 
         //Laat de update van de balloon zien.
-        this.clock.style.transform = `translate(${this.posX}px, ${this.posY}px)`
-
-
+        this.div.style.transform = `translate(${this.posX}px, ${this.posY}px)`
     }
       
     update(){
-        this.clock.innerHTML = "Tijd " + Math.floor(this.secondes/50)
+        this.div.innerHTML = "Teller " + Math.floor(this.secondes/100)
         
         //Teller stopt bij 0 
         if (this.secondes > 0){
             //Update dat er elke seconde word afgeteld.
             this.secondes--
-        } else{
-            //Door gestuurd naar game over screen. 
-            this.finished = true
         }
-    } 
+
+    }
+    
+ 
+
+ 
 }
