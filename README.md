@@ -71,9 +71,10 @@ Link naar de online speelbare game. X
 
 ## Klassendiagram
 
-Een klassendiagram van de game;
+Een klassendiagram van de game: 
 
-     <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/BalloonGame.jpg">
+
+<img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/BalloonGame.jpg">
 
 ## Peer review
 Dit is de peer-review die ik een aantal weken geleden heb geschreven voor Nienke Overmeer;
