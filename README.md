@@ -24,27 +24,7 @@ Licht toe waar en waarom je deze OOP principes hebt toegepast
       
    - *Waar toegepast?*
 Één van mijn meest grootste voorbeelden van waar ik classes heb toegepast is "playscreen.ts"
-class Playscreen {
-
-    private screen : Screens 
-    private timer : Timer
-    private score : Score
-    private balloon:Balloon[] = []
-   
-
-    constructor(s:Screens) {
-        //Screen moet een waarde hebben
-        this.screen = s
-    
-        this.timer = new Timer()                //Maak Timer aan van Timer class.
-        
-        this.score = new Score()                //Maakt een nieuw Scoreboard aan.
-
-        //Push aantal Balloon
-        for (let i = 0; i < 30; i++) {
-            
-           this.balloon.push(new Balloon(this.score))
-        }
+<img src = "docs/bewijsImg/classes.JPG" width = "100">
 
  - **Encapsulation**
    - *Waarom toegepast?*
