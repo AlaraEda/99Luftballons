@@ -48,8 +48,9 @@ Licht toe waar en waarom je deze OOP principes hebt toegepast
    
    - *Waar toegepast?*
    Ik heb composition toegepast in playscreen.ts. In playscreen.ts heb ik namelijk de classes van "screen", "timer", "score" & "balloon" opgeroepen, aangemaakt en zelfs geupdate zoals hier beneden zichtbaar is;
-     <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/classes.jpg" width = "500">
-     <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/composition.jpg" width = "500">
+   
+       <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/classes.JPG" width = "500">
+       <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/composition.jpg" width = "500">
 
    
  - **Inheritance**
