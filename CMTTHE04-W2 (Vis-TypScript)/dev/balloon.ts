@@ -11,7 +11,7 @@ class Balloon {
     private speedX: number                                                  //Snelheid X-as
     private speedY: number                                                  //Snelheid Y-as
     
-    public kapot: boolean = false
+    private kapot: boolean = false
 
     constructor(s: Score) {
         this.score = s
@@ -47,7 +47,7 @@ class Balloon {
         
     }
 
-    update(){
+    private update(){
         this.x += this.speedX                                               // Snelheid ballon X-as is altijd 0 (dus ballon gaat niet naar rechts of links)
         this.y += this.speedY                                               // Snelheid balloon Y-as is altijd random.
 
@@ -62,7 +62,7 @@ class Balloon {
 
     }
 
-    kapotteBallon(){
+    private kapotteBallon(){
         if (this.kapot == false){
             this.score.addScore(10)
         }
