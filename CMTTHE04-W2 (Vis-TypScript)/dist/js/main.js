@@ -1,25 +1,13 @@
-var Screens = (function () {
-    function Screens() {
-        this.background = document.createElement("background");
-        document.body.appendChild(this.background);
-        this.container = document.createElement("game");
-        document.body.appendChild(this.container);
-        this.screen = new StartScreen(this);
-    }
-    Screens.prototype.showPlayScreen = function () {
-        this.container.innerHTML = "";
-        this.screen = new Playscreen(this);
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
-    Screens.prototype.showEndScreen = function () {
-        this.container.innerHTML = "";
-        this.screen = new GameOverScreen(this);
-    };
-    return Screens;
-}());
-window.addEventListener("load", function () {
-    console.log("create new screens");
-    new Screens();
-});
+})();
 var Balloon = (function () {
     function Balloon(s) {
         var _this = this;
@@ -61,15 +49,24 @@ var Balloon = (function () {
     };
     return Balloon;
 }());
-var GameOverScreen = (function () {
-    function GameOverScreen(s) {
-        var _this = this;
+var GameObject = (function () {
+    function GameObject(s) {
         this.screen = s;
         this.div = document.createElement("start");
         var container = document.getElementsByTagName("game")[0];
         container.appendChild(this.div);
-        this.div.addEventListener("click", function () { return _this.Clicked(); });
-        this.div.innerHTML = "Game Over Restart";
+    }
+    GameObject.prototype.update = function () {
+    };
+    return GameObject;
+}());
+var GameOverScreen = (function (_super) {
+    __extends(GameOverScreen, _super);
+    function GameOverScreen(s) {
+        var _this = _super.call(this, s) || this;
+        _this.div.addEventListener("click", function () { return _this.Clicked(); });
+        _this.div.innerHTML = "Game Over Restart";
+        return _this;
     }
     GameOverScreen.prototype.update = function () {
     };
@@ -77,7 +74,7 @@ var GameOverScreen = (function () {
         this.screen.showPlayScreen();
     };
     return GameOverScreen;
-}());
+}(GameObject));
 var Playscreen = (function () {
     function Playscreen(s) {
         this.balloon = [];
@@ -127,16 +124,37 @@ var Score = (function () {
     };
     return Score;
 }());
-var StartScreen = (function () {
+var Screens = (function () {
+    function Screens() {
+        this.background = document.createElement("background");
+        document.body.appendChild(this.background);
+        this.container = document.createElement("game");
+        document.body.appendChild(this.container);
+        this.screen = new StartScreen(this);
+    }
+    Screens.prototype.showPlayScreen = function () {
+        this.container.innerHTML = "";
+        this.screen = new Playscreen(this);
+    };
+    Screens.prototype.showEndScreen = function () {
+        this.container.innerHTML = "";
+        this.screen = new GameOverScreen(this);
+    };
+    return Screens;
+}());
+window.addEventListener("load", function () {
+    console.log("create new screens");
+    new Screens();
+});
+var StartScreen = (function (_super) {
+    __extends(StartScreen, _super);
     function StartScreen(s) {
         var _this = this;
-        console.log("IK BEN EEN START SCREEN");
-        this.screen = s;
-        this.div = document.createElement("start");
-        var container = document.getElementsByTagName("game")[0];
-        container.appendChild(this.div);
-        this.div.addEventListener("click", function () { return _this.startClicked(); });
-        this.div.innerHTML = "START MY GAME";
+        console.log("IK BEN EEN STARTtt SCREEN");
+        _this = _super.call(this, s) || this;
+        _this.div.addEventListener("click", function () { return _this.startClicked(); });
+        _this.div.innerHTML = "START MY GAME";
+        return _this;
     }
     StartScreen.prototype.update = function () {
     };
@@ -144,7 +162,7 @@ var StartScreen = (function () {
         this.screen.showPlayScreen();
     };
     return StartScreen;
-}());
+}(GameObject));
 var Timer = (function () {
     function Timer() {
         this.secondes = 2000;

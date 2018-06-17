@@ -1,23 +1,13 @@
-class GameOverScreen {
+///<reference path = "gameobject.ts"/>
 
-    private div: HTMLElement
-    private screen: Screens
+class GameOverScreen extends GameObject {
     
     constructor(s: Screens) {
-        this.screen = s
-
-        //Lege div is gecreeerd/opgehaald uit style.css
-        this.div = document.createElement("start")
-
-        //Een container is aangemaakt
-        let container = document.getElementsByTagName("game")[0]!
-
-        //"Game-over"-text verwerkt in container
-        container.appendChild(this.div)
-
+        super(s)
+    
         //Click voor nieuw spel
         this.div.addEventListener("click",()=> this.Clicked())
-        
+
         //Lege div gevuld met "Game over"
         this.div.innerHTML = "Game Over Restart"
 

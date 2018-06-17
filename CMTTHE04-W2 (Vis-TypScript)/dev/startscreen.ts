@@ -1,23 +1,12 @@
 //Begin Scherm- Start the Game!
-class StartScreen {
+///<reference path="gameobject.ts"/>
 
-    private div: HTMLElement
-    private screen : Screens
+class StartScreen extends GameObject {
 
     constructor(s:Screens) {
-        console.log("IK BEN EEN START SCREEN");
+        console.log("IK BEN EEN STARTtt SCREEN");
         
-        //screen moet een waarde hebben
-        this.screen = s
-
-        //Start-text is in een div gestopt
-        this.div = document.createElement("start")
-
-        //Een containter is aangemaakt --> containter 0
-        let container = document.getElementsByTagName("game")[0]!
-        
-        //"Start-Text" is gestopt in container 0
-        container.appendChild(this.div)
+        super(s)
 
         //Als je klikt op "Start-Text" --> Clicked functie;
         this.div.addEventListener("click", ()=>this.startClicked())
