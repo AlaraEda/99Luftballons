@@ -13,18 +13,17 @@ Link naar de online speelbare game. X
 
 ## Toelichting OOP 
 
-Licht toe waar en waarom je deze OOP principes hebt toegepast
 
  - **Classes**
    - *Waarom toegepast?*
    
-   Een "Class" is een uitrekbaar programmeer-code-template voor het creeeren van objecten. In classes worden beginwaardes gecreeerd die de status van het object aangeven. Ook kun je in een class implementaties van het gedrag van het object aangeven. 
+    Een "Class" is een uitrekbaar programmeer-code-template voor het creeeren van objecten. In classes worden beginwaardes gecreeerd die de status van het object aangeven. Ook kun je in een class implementaties van het gedrag van het object aangeven. 
    
-      Mijn hele document staat vol met classes. Ik gebruik classes om functies die met het object te maken hebben te bewaren. De functies die ik dan in een bepaalde class heb gemaakt roep ik dan via een andere class aan, door dit te doen zijn al mijn classes met elkaar verbonden. 
+       Mijn hele document staat vol met classes. Ik gebruik classes om functies die met het object te maken hebben te bewaren. De functies die ik dan in een bepaalde class heb gemaakt roep ik dan via een andere class aan, door dit te doen zijn al mijn classes met elkaar verbonden. 
       
    - *Waar toegepast?*
    
-   Één van mijn meest grootste voorbeelden van waar ik classes heb toegepast is "playscreen.ts" waar een onderdeel ervan hieronder te zien is. In dit onderdeel heb ik de classes "Timer", "Screen", "Score" & "Balloon" opgeroepen in de class Playscreen. Ik heb al deze classes verbonden met een variabele zodat ik de classes kan oproepen en gebruiken in de constructor. 
+    Één van mijn meest grootste voorbeelden van waar ik classes heb toegepast is "playscreen.ts" waar een onderdeel ervan hieronder te zien is. In dit onderdeel heb ik de classes "Timer", "Screen", "Score" & "Balloon" opgeroepen in de class Playscreen. Ik heb al deze classes verbonden met een variabele zodat ik de classes kan oproepen en gebruiken in de constructor. 
 
     <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/classes.JPG">
 
@@ -47,10 +46,10 @@ Licht toe waar en waarom je deze OOP principes hebt toegepast
    
    
    - *Waar toegepast?*
-   Ik heb composition toegepast in playscreen.ts. In playscreen.ts heb ik namelijk de classes van "screen", "timer", "score" & "balloon" opgeroepen, aangemaakt en zelfs geupdate zoals hier beneden zichtbaar is;
+   Ik heb composition toegepast in playscreen.ts. In playscreen.ts heb ik namelijk de classes van "screen", "timer", "score" & "balloon" opgeroepen, aangemaakt en zelfs geupdate zoals hier beneden zichtbaar is in de gameloop;
    
-       <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/classes.JPG" width = "500">
-       <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/composition.jpg" width = "500">
+       <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/classes.JPG" width = "300">
+       <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/composition.jpg" width = "300">
 
    
  - **Inheritance**
