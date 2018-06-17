@@ -1,6 +1,7 @@
 class GameOverScreen {
+
     private div: HTMLElement
-    screen: Screens
+    private screen: Screens
     
     constructor(s: Screens) {
         this.screen = s
@@ -16,6 +17,7 @@ class GameOverScreen {
 
         //Click voor nieuw spel
         this.div.addEventListener("click",()=> this.Clicked())
+        
         //Lege div gevuld met "Game over"
         this.div.innerHTML = "Game Over Restart"
 

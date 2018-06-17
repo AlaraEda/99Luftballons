@@ -21,6 +21,8 @@ class StartScreen {
 
         //Als je klikt op "Start-Text" --> Clicked functie;
         this.div.addEventListener("click", ()=>this.startClicked())
+        
+        //Lege div is gevuld met "Start my game'
         this.div.innerHTML = "START MY GAME"
     }
 
