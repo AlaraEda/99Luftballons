@@ -33,7 +33,7 @@ Licht toe waar en waarom je deze OOP principes hebt toegepast
 Een klassendiagram van de game.
 
 ## Peer review
-Dit is de peer-review die ik een aantal weken geleden heb geschreven voor Lotte Arnouldsen;
+Dit is de peer-review die ik een aantal weken geleden heb geschreven voor Nienke Overmeer;
 https://github.com/Artemiss0/Game/issues/3
 
 ## Extra uitdaging
