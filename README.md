@@ -30,7 +30,15 @@ Licht toe waar en waarom je deze OOP principes hebt toegepast
 
  - **Encapsulation**
    - *Waarom toegepast?*
+   
+   Encapsulation is het op protected, private of public zetten van properties & functies. Je zet ze op public als je wilt dat andere bestanden ook toegang hebben tot je variabelen. Wanneer variabelen op public staan kunnen andere bestanden de waardes ervan aanpassen. Hierom is het het handigst om zoveel mogelijk variabelen op "private" te zetten, aangezien je daardoor meer controle hebt over je code omdat je het alleen maar op bepaalde plekken kan aanpassen. 
+   
+   Protected daarintegen gebruik je alléen als je wilt dat je "children" je code kunnen aanpassen & de rest niet.
+   
    - *Waar toegepast?*
+   Encapsulation is in al mijn dev bestanden gebruikt. Als voorbeeld geef ik hierom alweer de playscreen.ts;
+   
+   <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/classes.JPG" width = "100">
    
  - **Composition**
    - *Waarom toegepast?*
