@@ -19,7 +19,7 @@ class GameObject {
 
     }
 
-    update() {
+    public update() {
 
     }
 

@@ -1,13 +1,13 @@
 
 //Alle schermen worden hierin opgeroepen.
 class Screens {
-    screen: any
+    private screen: any
 
     private container: HTMLElement
     private background : HTMLElement                                           
         
     constructor() {
-        //console.log("ik ben een screens instance");
+        console.log("ik ben een screens instance");
 
         //Creert achtergrond voor alle screens hetzelfde.
         this.background = document.createElement("background")            

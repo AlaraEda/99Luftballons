@@ -47,7 +47,7 @@ class Balloon {
         
     }
 
-    private update(){
+    public update(){
         this.x += this.speedX                                               // Snelheid ballon X-as is altijd 0 (dus ballon gaat niet naar rechts of links)
         this.y += this.speedY                                               // Snelheid balloon Y-as is altijd random.
 

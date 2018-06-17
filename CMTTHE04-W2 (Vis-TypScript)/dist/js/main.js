@@ -110,7 +110,6 @@ var Playscreen = (function () {
 var Score = (function () {
     function Score() {
         this.score = 0;
-        this.posX = 0;
         this.scoreboard = document.createElement("score");
         document.body.appendChild(this.scoreboard);
         var container = document.getElementsByTagName("game")[0];
@@ -126,6 +125,7 @@ var Score = (function () {
 }());
 var Screens = (function () {
     function Screens() {
+        console.log("ik ben een screens instance");
         this.background = document.createElement("background");
         document.body.appendChild(this.background);
         this.container = document.createElement("game");
@@ -169,7 +169,6 @@ var Timer = (function () {
         this.posX = 0;
         this.posY = 0;
         this.finished = false;
-        this.score = 5;
         this.clock = document.createElement("clock");
         document.body.appendChild(this.clock);
         this.clock.innerHTML = "Tijd: 500";

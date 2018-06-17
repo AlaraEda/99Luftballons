@@ -1,8 +1,6 @@
 class Timer {
     private clock:HTMLElement
 
-    over: GameOverScreen
-
     //5 minuten
     private secondes : number = 2000
 
@@ -12,7 +10,6 @@ class Timer {
 
     public finished:boolean = false
 
-    score: number = 5
 
     constructor() {
         
@@ -38,7 +35,7 @@ class Timer {
 
     }
       
-    update(){
+    public update(){
         this.clock.innerHTML = "Tijd " + Math.floor(this.secondes/50)
         
         //Teller stopt bij 0 

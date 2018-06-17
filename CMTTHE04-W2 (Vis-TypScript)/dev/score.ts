@@ -1,12 +1,8 @@
 class Score {
-    public scoreboard: HTMLElement
+    private scoreboard: HTMLElement
     
     //Start Score
     private score: number = 0
-
-    //Position Score-bord
-    private posX : number = 0
-    private posY : number
 
     constructor(){
         //Creeer scorebord in HTML
@@ -17,7 +13,7 @@ class Score {
         container.appendChild(this.scoreboard)
     }
 
-    update(){
+    public update(){
         //console.log(this.score++)
         this.scoreboard.innerHTML = "Score: " + this.score  
     }
