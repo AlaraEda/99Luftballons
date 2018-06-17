@@ -26,7 +26,7 @@ Licht toe waar en waarom je deze OOP principes hebt toegepast
    
    Één van mijn meest grootste voorbeelden van waar ik classes heb toegepast is "playscreen.ts" waar een onderdeel ervan hieronder te zien is. In dit onderdeel heb ik de classes "Timer", "Screen", "Score" & "Balloon" opgeroepen in de class Playscreen. Ik heb al deze classes verbonden met een variabele zodat ik de classes kan oproepen en gebruiken in de constructor. 
 
-   <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/classes.JPG">
+    <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/classes.JPG">
 
  - **Encapsulation**
    - *Waarom toegepast?*
@@ -39,13 +39,18 @@ Licht toe waar en waarom je deze OOP principes hebt toegepast
    
    Encapsulation is in al mijn dev bestanden gebruikt. Als voorbeeld geef ik hierom alweer de playscreen.ts;
    
-    <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/classes.JPG">
+     <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/classes.JPG">
    
  - **Composition**
    - *Waarom toegepast?*
-     
+     Composition is handig om te gebruiken wanneer je alle Classes in je document met elkaar wilt verbinden. Ook is het handig om compositie te gebruiken als je via 1 class een andere class bijvoorbeeld wilt gaan updaten.
+   
    
    - *Waar toegepast?*
+   Ik heb composition toegepast in playscreen.ts. In playscreen.ts heb ik namelijk de classes van "screen", "timer", "score" & "balloon" opgeroepen, aangemaakt en zelfs geupdate zoals hier beneden zichtbaar is;
+     <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/classes.jpg" width = "500">
+     <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/composition.jpg" width = "500">
+
    
  - **Inheritance**
    - *Waarom toegepast?*
