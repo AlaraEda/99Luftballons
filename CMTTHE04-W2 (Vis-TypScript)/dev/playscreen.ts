@@ -1,9 +1,9 @@
 class Playscreen {
 
-    screen : Screens 
-    timer : Timer
-    score : Score
-    balloon:Balloon[] = []
+    private screen : Screens 
+    private timer : Timer
+    private score : Score
+    private balloon:Balloon[] = []
    
 
     constructor(s:Screens) {
