@@ -4,7 +4,7 @@ Dit is de game die ik gemaakt heb voor het vak Programmeren van Periode 4, leerj
 
 ## Speelbare game
 
-Link naar de online speelbare game.
+Link naar de online speelbare game. X
 
 ## Checklist
 
@@ -15,17 +15,26 @@ Link naar de online speelbare game.
 
 Licht toe waar en waarom je deze OOP principes hebt toegepast
 
- - *Classes*
-   - Second nested list item
+ - **Classes**
+   - *Waarom toegepast?*
+   Een "Class" is een uitrekbaar programmeer-code-template voor het creeeren van objecten. In classes worden beginwaardes gecreeerd voor die de status van het object aangeven. Ook kun je in een class implementaties van het gedrag van het object aangeven. 
+   
+      Mijn hele document staat vol met classes. Ik gebruik classes om daarin mijn functies (die met die bepaalde class te maken hebben te bewaren. De functies die ik dan in een bepaalde class heb gemaakt roep ik dan via een andere class op, door dit te doen zijn al mijn classes met elkaar verbonden. 
+      
+   - *Waar toegepast?*
 
- - *Encapsulation*
-   - Second nested list item
+
+ - **Encapsulation**
+   - *Waarom toegepast?*
+   - *Waar toegepast?*
    
- - *Composition*
-   - Second nested list item
+ - **Composition**
+   - *Waarom toegepast?*
+   - *Waar toegepast?*
    
- - *Inheritance*
-   - Second nested list item
+ - **Inheritance**
+   - *Waarom toegepast?*
+   - *Waar toegepast?*
 
 
 ## Klassendiagram
