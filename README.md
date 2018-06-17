@@ -26,7 +26,7 @@ Licht toe waar en waarom je deze OOP principes hebt toegepast
    
    Één van mijn meest grootste voorbeelden van waar ik classes heb toegepast is "playscreen.ts" waar een onderdeel ervan hieronder te zien is. In dit onderdeel heb ik de classes "Timer", "Screen", "Score" & "Balloon" opgeroepen in de class Playscreen. Ik heb al deze classes verbonden met een variabele zodat ik de classes kan oproepen en gebruiken in de constructor. 
 
-   <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/classes.JPG">
+    <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/classes.JPG">
 
  - **Encapsulation**
    - *Waarom toegepast?*
@@ -39,18 +39,29 @@ Licht toe waar en waarom je deze OOP principes hebt toegepast
    
    Encapsulation is in al mijn dev bestanden gebruikt. Als voorbeeld geef ik hierom alweer de playscreen.ts;
    
-    <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/classes.JPG">
+     <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/classes.JPG">
    
  - **Composition**
    - *Waarom toegepast?*
-     
+     Composition is handig om te gebruiken wanneer je alle Classes in je document met elkaar wilt verbinden. Ook is het handig om compositie te gebruiken als je via 1 class een andere class bijvoorbeeld wilt gaan updaten.
+   
    
    - *Waar toegepast?*
+   Ik heb composition toegepast in playscreen.ts. In playscreen.ts heb ik namelijk de classes van "screen", "timer", "score" & "balloon" opgeroepen, aangemaakt en zelfs geupdate zoals hier beneden zichtbaar is;
+     <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/classes.jpg" width = "500">
+     <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/composition.jpg" width = "500">
+
    
  - **Inheritance**
    - *Waarom toegepast?*
+   Inheritance is handig om te gebruiken wanneer je 2 (of meer objecten) hebt die bestaan uit precies dezelfde code. Zodat je je eigen code dus niet meerdere malen hoeft te herhalen maak je een aparate Class aan waar je de stukken-code die je objecten gemeen hebben in staan verwerkt. Doormiddel van extends kan je dan je Class "verlengen". 
+   
    - *Waar toegepast?*
+Ik heb inheritance toegepast op "startscreen.ts" & "gamescreen.ts". Ik heb allebei "verlengt" met "gameobject.ts" zoals hier beneden zichtbaar is;
 
+     <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/gameobject.jpg" width = "200">
+     <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/gameoverscreen.jpg" width = "200">
+     <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/startscreen.jpg" width = "200">
 
 ## Klassendiagram
 
