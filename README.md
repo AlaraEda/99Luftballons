@@ -24,7 +24,7 @@ Licht toe waar en waarom je deze OOP principes hebt toegepast
       
    - *Waar toegepast?*
 Één van mijn meest grootste voorbeelden van waar ik classes heb toegepast is "playscreen.ts"
-<img src = "docs/bewijsImg/classes.JPG" width = "100">
+<img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/classes.JPG" width = "100">
 
  - **Encapsulation**
    - *Waarom toegepast?*
