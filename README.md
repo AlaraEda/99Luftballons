@@ -62,4 +62,5 @@ https://github.com/Artemiss0/Game/issues/3
 
 ## Extra uitdaging
 
-Licht toe welke extra uitdaging uit de modulewijzer je hebt toegepast.
+De game gebruikt een externe library uit de lijst in de modulewijzer. De externe library heet howler.js En word gebruikt om audio in het spel te verwerken. Het audio lied dat ik in het spel gebruik heet "99 Luftballons" van 'Nena' en word afgesppeeld wanneer het spel begint & geeindigd wanneer het spel stopt. 
+
