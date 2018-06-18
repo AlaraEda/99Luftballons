@@ -1,12 +1,13 @@
 
 //Alle schermen worden hierin opgeroepen.
 class Screens {
-    private screen: any
+    private screen: StartScreen | Playscreen | GameOverScreen
 
     private container: HTMLElement
     private background : HTMLElement                                           
         
     constructor() {
+        
         console.log("ik ben een screens instance");
 
         //Creert achtergrond voor alle screens hetzelfde.

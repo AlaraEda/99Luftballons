@@ -6,7 +6,7 @@ class GameObject {
     constructor(s:Screens) {
         
         //screen moet een waarde hebben
-        this.screen = s
+        this.screen = s  
 
         //Lege div is gecreeerd/opgehaald uit style.css
         this.div = document.createElement("start")
