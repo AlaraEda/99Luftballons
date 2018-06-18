@@ -8,6 +8,29 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+var Screens = (function () {
+    function Screens() {
+        console.log("ik ben een screens instance");
+        this.background = document.createElement("background");
+        document.body.appendChild(this.background);
+        this.container = document.createElement("game");
+        document.body.appendChild(this.container);
+        this.screen = new StartScreen(this);
+    }
+    Screens.prototype.showPlayScreen = function () {
+        this.container.innerHTML = "";
+        this.screen = new Playscreen(this);
+    };
+    Screens.prototype.showEndScreen = function () {
+        this.container.innerHTML = "";
+        this.screen = new GameOverScreen(this);
+    };
+    return Screens;
+}());
+window.addEventListener("load", function () {
+    console.log("create new screens");
+    new Screens();
+});
 var Balloon = (function () {
     function Balloon(s) {
         var _this = this;
@@ -124,29 +147,6 @@ var Score = (function () {
     };
     return Score;
 }());
-var Screens = (function () {
-    function Screens() {
-        console.log("ik ben een screens instance");
-        this.background = document.createElement("background");
-        document.body.appendChild(this.background);
-        this.container = document.createElement("game");
-        document.body.appendChild(this.container);
-        this.screen = new StartScreen(this);
-    }
-    Screens.prototype.showPlayScreen = function () {
-        this.container.innerHTML = "";
-        this.screen = new Playscreen(this);
-    };
-    Screens.prototype.showEndScreen = function () {
-        this.container.innerHTML = "";
-        this.screen = new GameOverScreen(this);
-    };
-    return Screens;
-}());
-window.addEventListener("load", function () {
-    console.log("create new screens");
-    new Screens();
-});
 var StartScreen = (function (_super) {
     __extends(StartScreen, _super);
     function StartScreen(s) {
