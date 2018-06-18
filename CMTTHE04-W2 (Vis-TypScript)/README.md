@@ -25,7 +25,7 @@ Link naar de online speelbare game. X
    
     Één van mijn meest grootste voorbeelden van waar ik classes heb toegepast is "playscreen.ts" waar een onderdeel ervan hieronder te zien is. In dit onderdeel heb ik de classes "Timer", "Screen", "Score" & "Balloon" opgeroepen in de class Playscreen. Ik heb al deze classes verbonden met een variabele zodat ik de classes kan oproepen en gebruiken in de constructor. 
 
-    <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/classes.JPG">
+    <img src = "docs/bewijsImg/classes.JPG">
 
 
  - **Encapsulation**
@@ -40,7 +40,7 @@ Link naar de online speelbare game. X
    
    Encapsulation is in al mijn dev bestanden gebruikt. Als voorbeeld geef ik hierom alweer de playscreen.ts;
    
-     <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/classes.JPG">
+     <img src = "docs/bewijsImg/classes.JPG">
    
  - **Composition**
    - *Waarom toegepast?*
@@ -52,8 +52,8 @@ Link naar de online speelbare game. X
    
      Ik heb composition toegepast in playscreen.ts. In playscreen.ts heb ik namelijk de classes van "screen", "timer", "score" & "balloon" opgeroepen, aangemaakt en zelfs geupdate zoals hier beneden zichtbaar is in de gameloop;
    
-       <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/classes.JPG" width = "300">
-       <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/composition.jpg" width = "300">
+       <img src = "docs/bewijsImg/classes.JPG" width = "300">
+       <img src = "docs/bewijsImg/composition.jpg" width = "300">
 
    
  - **Inheritance**
@@ -65,16 +65,16 @@ Link naar de online speelbare game. X
    
    Ik heb inheritance toegepast op "startscreen.ts" & "gamescreen.ts". Ik heb allebei "verlengt" met "gameobject.ts" zoals hier beneden zichtbaar is;
 
-     <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/gameobject.jpg" width = "200">
-     <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/gameoverscreen.jpg" width = "200">
-     <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/startscreen.jpg" width = "200">
+     <img src = "docs/bewijsImg/gameobject.jpg" width = "200">
+     <img src = "docs/bewijsImg/gameoverscreen.jpg" width = "200">
+     <img src = "docs/bewijsImg/startscreen.jpg" width = "200">
 
 ## Klassendiagram
 
 Een klassendiagram van de game: 
 
 
-<img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/BalloonGame.jpg">
+<img src = "docs/bewijsImg/BalloonGame.jpg">
 
 ## Peer review
 Dit is de peer-review die ik een aantal weken geleden heb geschreven voor Nienke Overmeer;
