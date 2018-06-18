@@ -1,7 +1,7 @@
 class Balloon {
 
     private balloon : HTMLElement                                           //Div
-    
+    private sound : any
     private score: Score
     //Ballon positie
     private x : number                                                      //Positie X
@@ -15,6 +15,12 @@ class Balloon {
 
     constructor(s: Score) {
         this.score = s
+        
+        //Pop-geluid
+        this.sound = new Howl({
+            src: ['./sounds/popsoundeffect.mp4']
+        });
+        
         //Balloon is gecreerd en in de body van Html gestopt.
         this.balloon = document.createElement("balloon")            
         document.body.appendChild(this.balloon)
@@ -65,7 +71,9 @@ class Balloon {
     private kapotteBallon(){
         if (this.kapot == false){
             this.score.addScore(10)
+            this.sound.play()
         }
+
         this.kapot = true                                                   //Verwijzing naar --> playscreen.ts
         this.balloon.classList.add("dead")                                 // Want in CSS staat de afbeelding van geknakte balloon als dood.
         this.speedY = 2                                                    // Snelheid waarmee geknakte ballon valt.

@@ -36,6 +36,9 @@ var Balloon = (function () {
         var _this = this;
         this.kapot = false;
         this.score = s;
+        this.sound = new Howl({
+            src: ['./sounds/popsoundeffect.mp4']
+        });
         this.balloon = document.createElement("balloon");
         document.body.appendChild(this.balloon);
         var container = document.getElementsByTagName("game")[0];
@@ -59,6 +62,7 @@ var Balloon = (function () {
     Balloon.prototype.kapotteBallon = function () {
         if (this.kapot == false) {
             this.score.addScore(10);
+            this.sound.play();
         }
         this.kapot = true;
         this.balloon.classList.add("dead");
