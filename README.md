@@ -13,20 +13,20 @@ Link naar de online speelbare game. X
 
 ## Toelichting OOP 
 
-Licht toe waar en waarom je deze OOP principes hebt toegepast
 
  - **Classes**
    - *Waarom toegepast?*
    
-   Een "Class" is een uitrekbaar programmeer-code-template voor het creeeren van objecten. In classes worden beginwaardes gecreeerd die de status van het object aangeven. Ook kun je in een class implementaties van het gedrag van het object aangeven. 
+    Een "Class" is een uitrekbaar programmeer-code-template voor het creeeren van objecten. In classes worden beginwaardes gecreeerd die de status van het object aangeven. Ook kun je in een class implementaties van het gedrag van het object aangeven. 
    
       Mijn hele document staat vol met classes. Ik gebruik classes om functies die met het object te maken hebben te bewaren. De functies die ik dan in een bepaalde class heb gemaakt roep ik dan via een andere class aan, door dit te doen zijn al mijn classes met elkaar verbonden. 
       
    - *Waar toegepast?*
    
-   Één van mijn meest grootste voorbeelden van waar ik classes heb toegepast is "playscreen.ts" waar een onderdeel ervan hieronder te zien is. In dit onderdeel heb ik de classes "Timer", "Screen", "Score" & "Balloon" opgeroepen in de class Playscreen. Ik heb al deze classes verbonden met een variabele zodat ik de classes kan oproepen en gebruiken in de constructor. 
+    Één van mijn meest grootste voorbeelden van waar ik classes heb toegepast is "playscreen.ts" waar een onderdeel ervan hieronder te zien is. In dit onderdeel heb ik de classes "Timer", "Screen", "Score" & "Balloon" opgeroepen in de class Playscreen. Ik heb al deze classes verbonden met een variabele zodat ik de classes kan oproepen en gebruiken in de constructor. 
 
-<img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/classes.JPG" width = "100">
+    <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/classes.JPG">
+
 
  - **Encapsulation**
    - *Waarom toegepast?*
@@ -35,26 +35,46 @@ Licht toe waar en waarom je deze OOP principes hebt toegepast
    
    Protected daarintegen gebruik je alléen als je wilt dat je "children" je code kunnen aanpassen & de rest niet.
    
+   
    - *Waar toegepast?*
    
    Encapsulation is in al mijn dev bestanden gebruikt. Als voorbeeld geef ik hierom alweer de playscreen.ts;
    
-   <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/classes.JPG" width = "100">
+     <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/classes.JPG">
    
  - **Composition**
    - *Waarom toegepast?*
    
+     Composition is handig om te gebruiken wanneer je alle Classes in je document met elkaar wilt verbinden. Ook is het handig om compositie te gebruiken als je via 1 class een andere class bijvoorbeeld wilt gaan updaten.
+   
    
    - *Waar toegepast?*
+   
+     Ik heb composition toegepast in playscreen.ts. In playscreen.ts heb ik namelijk de classes van "screen", "timer", "score" & "balloon" opgeroepen, aangemaakt en zelfs geupdate zoals hier beneden zichtbaar is in de gameloop;
+   
+       <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/classes.JPG" width = "300">
+       <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/composition.jpg" width = "300">
+
    
  - **Inheritance**
    - *Waarom toegepast?*
+   
+   Inheritance is handig om te gebruiken wanneer je 2 (of meer objecten) hebt die bestaan uit precies dezelfde code. Zodat je je eigen code dus niet meerdere malen hoeft te herhalen maak je een aparate Class aan waar je de stukken-code die je objecten gemeen hebben in staan verwerkt. Doormiddel van extends kan je dan je Class "verlengen". 
+   
    - *Waar toegepast?*
+   
+   Ik heb inheritance toegepast op "startscreen.ts" & "gamescreen.ts". Ik heb allebei "verlengt" met "gameobject.ts" zoals hier beneden zichtbaar is;
 
+     <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/gameobject.jpg" width = "200">
+     <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/gameoverscreen.jpg" width = "200">
+     <img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/startscreen.jpg" width = "200">
 
 ## Klassendiagram
 
-Een klassendiagram van de game.
+Een klassendiagram van de game: 
+
+
+<img src = "CMTTHE04-W2 (Vis-TypScript)/docs/bewijsImg/BalloonGame.jpg">
 
 ## Peer review
 Dit is de peer-review die ik een aantal weken geleden heb geschreven voor Nienke Overmeer;
@@ -62,4 +82,5 @@ https://github.com/Artemiss0/Game/issues/3
 
 ## Extra uitdaging
 
-Licht toe welke extra uitdaging uit de modulewijzer je hebt toegepast.
+De game gebruikt een externe library uit de lijst in de modulewijzer. De externe library heet howler.js En word gebruikt om audio in het spel te verwerken. Het audio lied dat ik in het spel gebruik heet "99 Luftballons" van 'Nena' en word afgesppeeld wanneer het spel begint & geeindigd wanneer het spel stopt. 
+
