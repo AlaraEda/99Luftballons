@@ -4,7 +4,8 @@ Dit is de game die ik gemaakt heb voor het vak Programmeren van Periode 4, leerj
 
 ## Speelbare game
 
-Link naar de online speelbare game. X
+Link naar de online speelbare game.
+https://stud.hosted.hr.nl/0931871/Game/docs/
 
 ## Checklist
 
